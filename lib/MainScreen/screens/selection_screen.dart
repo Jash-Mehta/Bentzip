@@ -14,7 +14,7 @@ class Selection_screen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Container(
-                        margin: const EdgeInsets.only(left: 80.0, top: 40.0),
+                        margin: EdgeInsets.only(left: 80.0, top: 40.0),
                         child: Image.asset(
                           "assets/logo.png",
                           width: MediaQuery.of(context).size.width * 0.6,
@@ -28,8 +28,10 @@ class Selection_screen extends StatelessWidget {
                         child: GridView.count(
                           primary: false,
                           padding: const EdgeInsets.all(20),
-                          crossAxisSpacing: 30,
-                          mainAxisSpacing: 30,
+                          crossAxisSpacing:
+                              Responsive.issmallmobile(context) ? 20 : 40,
+                          mainAxisSpacing:
+                              Responsive.issmallmobile(context) ? 20 : 30,
                           crossAxisCount: 2,
                           children: <Widget>[
                             Container(

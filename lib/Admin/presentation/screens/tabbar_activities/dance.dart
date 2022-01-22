@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class BookScreen extends StatefulWidget {
-  const BookScreen({Key? key}) : super(key: key);
+class DanceScreen extends StatefulWidget {
+  const DanceScreen({ Key? key }) : super(key: key);
 
   @override
-  _BookScreenState createState() => _BookScreenState();
+  _DanceScreenState createState() => _DanceScreenState();
 }
 
-class _BookScreenState extends State<BookScreen> {
+class _DanceScreenState extends State<DanceScreen> {
   List field = [];
   @override
   Widget build(BuildContext context) {

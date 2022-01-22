@@ -1,4 +1,5 @@
 import 'package:bentzip/Admin/presentation/widgets/detail.dart';
+import 'package:bentzip/MainScreen/screens/responsive.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -19,18 +20,19 @@ class _TeacherScreenState extends State<TeacherScreen> {
           title: Text(
             "ADMIN",
             style: TextStyle(
-                color: Colors.blue[800],
-                fontWeight: FontWeight.bold,
-                fontSize: 25.0),
+              color: Colors.blue[800],
+              fontWeight: FontWeight.bold,
+              fontSize: Responsive.issmallmobile(context) ? 25 : 22,
+            ),
           ),
           leading: IconButton(
               onPressed: () {
                 Navigator.pop(context);
               },
-              icon: const Icon(
+              icon: Icon(
                 CupertinoIcons.back,
                 color: Colors.black,
-                size: 30.0,
+                size: Responsive.issmallmobile(context) ? 35 : 30,
               )),
           actions: [Image.asset('assets/logo.png')],
         ),
@@ -58,7 +60,7 @@ class _TeacherScreenState extends State<TeacherScreen> {
                   "ABOUT TEACHERS",
                   style: TextStyle(
                       color: Colors.blue[800],
-                      fontSize: 24.0,
+                      fontSize: Responsive.issmallmobile(context) ? 25 : 22,
                       letterSpacing: 0.5,
                       fontWeight: FontWeight.bold),
                 ),
@@ -66,13 +68,13 @@ class _TeacherScreenState extends State<TeacherScreen> {
             ],
           ),
           const SizedBox(height: 15.0),
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(top: 10.0, left: 30.0),
             child: Text(
               "Teachers Details",
               style: TextStyle(
                   color: Colors.black,
-                  fontSize: 25.0,
+                  fontSize: Responsive.issmallmobile(context) ? 25 : 23,
                   fontWeight: FontWeight.bold),
             ),
           ),

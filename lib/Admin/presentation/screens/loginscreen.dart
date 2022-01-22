@@ -19,10 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
           ? SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  /**
-            * ! Image responsives is left......
-             */
+                children: [    
                   Container(
                       margin: const EdgeInsets.only(left: 65.0, top: 30.0),
                       child: Image.asset(

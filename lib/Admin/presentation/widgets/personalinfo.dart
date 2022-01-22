@@ -2,17 +2,15 @@ import 'package:flutter/material.dart';
 
 class PersonalInformation extends StatefulWidget {
   String name;
-  String dob;
-  String positionApplying;
-  String address;
-  String phoneno;
+  String subject;
+  String teacherId;
+  String date;
   PersonalInformation({
     Key? key,
     required this.name,
-    required this.dob,
-    required this.positionApplying,
-    required this.address,
-    required this.phoneno,
+    required this.subject,
+    required this.teacherId,
+    required this.date,
   }) : super(key: key);
 
   @override
@@ -23,57 +21,48 @@ class _PersonalInformationState extends State<PersonalInformation> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Padding(
-          padding: const EdgeInsets.only(left: 14.0),
+          padding: const EdgeInsets.only(left: 20.0, top: 15.0),
           child: Text(
             'Name: ${widget.name}',
             style: const TextStyle(
                 color: Colors.black,
-                fontSize: 17.0,
+                fontSize: 20.0,
                 fontWeight: FontWeight.w500),
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 20.0),
+          padding: const EdgeInsets.only(left: 20.0, top: 15.0),
           child: Text(
-            'DOB: ${widget.dob}',
+            'Subject: ${widget.subject}',
             style: const TextStyle(
                 color: Colors.black,
-                fontSize: 16.0,
+                fontSize: 20.0,
                 fontWeight: FontWeight.w500),
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 20.0),
+          padding: const EdgeInsets.only(left: 20.0, top: 15.0),
           child: Text(
-            'Position Applying: ${widget.positionApplying}',
+            'Teacher Id: ${widget.teacherId}',
             style: const TextStyle(
                 color: Colors.black,
-                fontSize: 16.0,
+                fontSize: 20.0,
                 fontWeight: FontWeight.w500),
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 20.0),
+          padding: const EdgeInsets.only(left: 20.0, top: 15.0),
           child: Text(
-            'Address: ${widget.address}',
+            'Date: ${widget.date}',
             style: const TextStyle(
                 color: Colors.black,
-                fontSize: 16.0,
+                fontSize: 20.0,
                 fontWeight: FontWeight.w500),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.only(left: 20.0),
-          child: Text(
-            'PhoneNo:${widget.phoneno} ',
-            style: const TextStyle(
-                color: Colors.black,
-                fontSize: 16.0,
-                fontWeight: FontWeight.w500),
-          ),
-        )
       ],
     );
   }

@@ -1,3 +1,4 @@
+import 'package:bentzip/MainScreen/screens/responsive.dart';
 import 'package:flutter/material.dart';
 
 class DashBoardContainer extends StatefulWidget {
@@ -30,7 +31,7 @@ class _DashBoardContainerState extends State<DashBoardContainer> {
               widget.title,
               style: TextStyle(
                   color: Colors.white,
-                  fontSize: 23.0,
+                  fontSize: Responsive.issmallmobile(context) ? 23 : 20,
                   fontWeight: FontWeight.bold),
             )
           ],

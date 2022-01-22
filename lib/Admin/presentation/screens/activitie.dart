@@ -1,23 +1,23 @@
+import 'package:bentzip/Admin/presentation/screens/tabbar_activities/annualday.dart';
+import 'package:bentzip/Admin/presentation/screens/tabbar_activities/dance.dart';
+import 'package:bentzip/Admin/presentation/screens/tabbar_activities/sport.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'tabbar_AccDepart/feedetails_student.dart';
-import 'tabbar_AccDepart/salarydetail_employee.dart';
-
-class Account extends StatefulWidget {
-  const Account({Key? key}) : super(key: key);
+class Activities extends StatefulWidget {
+  const Activities({Key? key}) : super(key: key);
 
   @override
-  _AccountState createState() => _AccountState();
+  _ActivitiesState createState() => _ActivitiesState();
 }
 
-class _AccountState extends State<Account> with SingleTickerProviderStateMixin {
+class _ActivitiesState extends State<Activities>
+    with SingleTickerProviderStateMixin {
   late TabController _tabController;
   @override
   void initState() {
-    // TODO: implement initState
     _tabController = TabController(
-      length: 2,
+      length: 3,
       initialIndex: 0,
       vsync: this,
     );
@@ -60,7 +60,7 @@ class _AccountState extends State<Account> with SingleTickerProviderStateMixin {
                   radius: 23.0,
                   backgroundColor: Colors.blue[800],
                   child: Image.asset(
-                    "assets/whitecashbook.png",
+                    "assets/inventoryflow.png",
                     width: 30.0,
                     height: 30.0,
                   ),
@@ -69,7 +69,7 @@ class _AccountState extends State<Account> with SingleTickerProviderStateMixin {
               Padding(
                 padding: const EdgeInsets.only(top: 15.0),
                 child: Text(
-                  "Account Department",
+                  "Activities",
                   style: TextStyle(
                       color: Colors.blue[800],
                       fontSize: 24.0,
@@ -91,17 +91,24 @@ class _AccountState extends State<Account> with SingleTickerProviderStateMixin {
               tabs: const [
                 Padding(
                   padding: EdgeInsets.all(8.0),
-                  child: Text("Fee Details of Students",
+                  child: Text("Sports",
                       style: TextStyle(
                           color: Colors.black,
-                          fontSize: 17.0,
+                          fontSize: 18.0,
                           fontWeight: FontWeight.bold)),
                 ),
                 Text(
-                  "Salary Detail of Employees",
+                  "Dance",
                   style: TextStyle(
                       color: Colors.black,
-                      fontSize: 17.0,
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  "Annual Day",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 18.0,
                       fontWeight: FontWeight.bold),
                 ),
               ]),
@@ -110,9 +117,11 @@ class _AccountState extends State<Account> with SingleTickerProviderStateMixin {
               decoration: const BoxDecoration(
                 color: Colors.white,
               ),
-              child: TabBarView(
-                  controller: _tabController,
-                  children: const [StudentFee(), EmployeeSalary()]),
+              child: TabBarView(controller: _tabController, children: const [
+                SportScreen(),
+                DanceScreen(),
+                AnnualDayScreen()
+              ]),
             ),
           ),
         ])));

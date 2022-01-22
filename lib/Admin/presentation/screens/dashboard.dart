@@ -20,19 +20,20 @@ class _DashBoardState extends State<DashBoard> {
         title: Text(
           "Bentzip",
           style: TextStyle(
-              color: Colors.blue[800],
-              fontWeight: FontWeight.bold,
-              fontSize: 25.0),
+            color: Colors.blue[800],
+            fontWeight: FontWeight.bold,
+            fontSize: Responsive.issmallmobile(context) ? 25 : 22,
+          ),
         ),
         leading: Builder(builder: (context) {
           return IconButton(
               onPressed: () {
                 Scaffold.of(context).openDrawer();
               },
-              icon: const Icon(
+              icon: Icon(
                 Icons.clear_all,
                 color: Colors.black,
-                size: 35.0,
+                size: Responsive.issmallmobile(context) ? 35 : 30,
               ));
         }),
         actions: [Image.asset('assets/logo.png')],
@@ -53,12 +54,13 @@ class _DashBoardState extends State<DashBoard> {
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
+                        children: [
                           Text(
                             "Sarah Watson",
                             style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 25.0,
+                                fontSize:
+                                    Responsive.issmallmobile(context) ? 25 : 22,
                                 fontWeight: FontWeight.bold),
                           ),
                           SizedBox(
@@ -67,7 +69,10 @@ class _DashBoardState extends State<DashBoard> {
                           Text(
                             "ADMIN",
                             style: TextStyle(
-                                color: Colors.black54, fontSize: 18.0),
+                              color: Colors.black54,
+                              fontSize:
+                                  Responsive.issmallmobile(context) ? 18 : 16,
+                            ),
                           ),
                           SizedBox(
                             height: 5.0,
@@ -75,7 +80,10 @@ class _DashBoardState extends State<DashBoard> {
                           Text(
                             "My qualification",
                             style: TextStyle(
-                                color: Colors.black54, fontSize: 18.0),
+                              color: Colors.black54,
+                              fontSize:
+                                  Responsive.issmallmobile(context) ? 18 : 16,
+                            ),
                           ),
                         ],
                       )
@@ -86,7 +94,6 @@ class _DashBoardState extends State<DashBoard> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(top: 10.0, right: 10.0),
-                      
                         child: SizedBox(
                           height: 40.0,
                           width: MediaQuery.of(context).size.width * 0.25,
@@ -115,7 +122,7 @@ class _DashBoardState extends State<DashBoard> {
                     child: Text(
                       "Most Used",
                       style: TextStyle(
-                          fontSize: 24.0,
+                          fontSize: Responsive.issmallmobile(context) ? 24 : 20,
                           fontWeight: FontWeight.w700,
                           color: Colors.blue[800]),
                     ),
@@ -124,8 +131,10 @@ class _DashBoardState extends State<DashBoard> {
                       child: GridView.count(
                     primary: false,
                     padding: const EdgeInsets.all(20),
-                    crossAxisSpacing: 30,
-                    mainAxisSpacing: 30,
+                    crossAxisSpacing:
+                        Responsive.issmallmobile(context) ? 20 : 30,
+                    mainAxisSpacing:
+                        Responsive.issmallmobile(context) ? 20 : 20,
                     crossAxisCount: 2,
                     children: <Widget>[
                       /**
@@ -165,9 +174,14 @@ class _DashBoardState extends State<DashBoard> {
                       /**
                   Application Screen.......
                    */
-                      DashBoardContainer(
-                          imageurl: "assets/application.png",
-                          title: "Application")
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/applicationapproval');
+                        },
+                        child: DashBoardContainer(
+                            imageurl: "assets/application.png",
+                            title: "Application"),
+                      )
                     ],
                   )),
                 ],

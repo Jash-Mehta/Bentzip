@@ -1,4 +1,5 @@
 import 'package:bentzip/Admin/presentation/screens/account.dart';
+import 'package:bentzip/Admin/presentation/screens/activitie.dart';
 import 'package:bentzip/Admin/presentation/screens/application_approval.dart';
 import 'package:bentzip/Admin/presentation/screens/cooridnates_screen.dart';
 import 'package:bentzip/Admin/presentation/screens/dashboard.dart';
@@ -57,6 +58,11 @@ class AppRouter {
          */
       case '/applicationapproval':
         return MaterialPageRoute(builder: (_) => ApplicationApproval());
+              /**
+        Activities Screen.....
+         */
+      case '/activities':
+        return MaterialPageRoute(builder: (_) => Activities());
       default:
         return null;
     }

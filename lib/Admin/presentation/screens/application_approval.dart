@@ -94,14 +94,14 @@ class _ApplicationApprovalState extends State<ApplicationApproval>
                   child: Text("Employee Applications",
                       style: TextStyle(
                           color: Colors.black,
-                          fontSize: 18.0,
+                          fontSize: 17.0,
                           fontWeight: FontWeight.bold)),
                 ),
                 Text(
-                  "Student Applications",
+                  "Student\nApplications",
                   style: TextStyle(
                       color: Colors.black,
-                      fontSize: 18.0,
+                      fontSize: 17.0,
                       fontWeight: FontWeight.bold),
                 ),
               ]),

@@ -27,8 +27,8 @@ class _DetailScreenState extends State<DetailScreen> {
           padding: const EdgeInsets.only(left: 13.0, right: 13.0, top: 10.0),
           child: SizedBox(
             width: Responsive.issmallmobile(context)
-                ? MediaQuery.of(context).size.width * 0.65
-                : MediaQuery.of(context).size.width * 1.0,
+                ? MediaQuery.of(context).size.width * 0.68
+                : MediaQuery.of(context).size.width * 0.68,
             height: MediaQuery.of(context).size.height * 0.09,
             child: TextFormField(
               decoration: InputDecoration(
@@ -58,14 +58,14 @@ class _DetailScreenState extends State<DetailScreen> {
             onPressed: widget.onpressedAdd,
             icon: Icon(
               CupertinoIcons.add_circled_solid,
-              color: Colors.blue[400],
+              color: Colors.blue[800],
               size: 30.0,
             )),
         IconButton(
             onPressed: widget.onpressedDelete,
             icon: Icon(
               CupertinoIcons.delete_solid,
-              color: Colors.blue[400],
+              color: Colors.blue[800],
               size: 30.0,
             ))
       ],

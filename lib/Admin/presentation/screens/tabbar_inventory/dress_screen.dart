@@ -53,6 +53,7 @@ class _DressScreenState extends State<DressScreen> {
         Padding(
           padding: const EdgeInsets.only(right: 10.0, bottom: 8.0),
           child: FloatingActionButton(
+            backgroundColor: Colors.blue[800],
             heroTag: "btn1",
             onPressed: () {
               field.add(0);
@@ -69,6 +70,7 @@ class _DressScreenState extends State<DressScreen> {
         Padding(
           padding: const EdgeInsets.only(right: 10.0, bottom: 8.0),
           child: FloatingActionButton(
+             backgroundColor: Colors.blue[800],
             heroTag: "btn2",
             onPressed: () {},
             child: const Icon(

@@ -109,8 +109,13 @@ class _AdminDrawerState extends State<AdminDrawer> {
             /**
              Activities.......
             */
-            InstitutionListview(
-                title: "Activities", icon: "assets/activities.png"),
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, '/activities');
+              },
+              child: InstitutionListview(
+                  title: "Activities", icon: "assets/activities.png"),
+            ),
             const SizedBox(
               height: 8.0,
             ),
