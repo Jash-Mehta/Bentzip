@@ -1,33 +1,30 @@
-
-
 class EmployeeSalaryData {
-  String employeename;
-  String salary;
+  String employeeID;
+  String name;
+  String designation;
   String status;
   EmployeeSalaryData({
-    required this.employeename,
-    required this.salary,
+    required this.employeeID,
+    required this.name,
+    required this.designation,
     required this.status,
   });
  
 }
- List<EmployeeSalaryData> salarydata = [
-  EmployeeSalaryData(employeename: "Jash Mehta", salary: "2000000", status: "PAY"),
-  EmployeeSalaryData(
-      employeename: "Danish Khan", salary: "5000000", status: "PAID"),
-  EmployeeSalaryData(employeename: "Vivek Patel", salary: "100000", status: "PAID"),
-  EmployeeSalaryData(employeename: "Jash Mehta", salary: "2000000", status: "PAY"),
-  EmployeeSalaryData(
-      employeename: "Danish Khan", salary: "5000000", status: "PAID"),
-  EmployeeSalaryData(employeename: "Vivek Patel", salary: "100000", status: "PAID"),
-  EmployeeSalaryData(employeename: "Jash Mehta", salary: "2000000", status: "PAY"),
-  EmployeeSalaryData(
-      employeename: "Danish Khan", salary: "5000000", status: "PAID"),
-  EmployeeSalaryData(employeename: "Vivek Patel", salary: "100000", status: "PAID"),
-  EmployeeSalaryData(employeename: "Jash Mehta", salary: "2000000", status: "PAY"),
-  EmployeeSalaryData(
-      employeename: "Danish Khan", salary: "5000000", status: "PAID"),
-  EmployeeSalaryData(employeename: "Vivek Patel", salary: "100000", status: "PAID"),
-];
-
-
+ List<EmployeeSalaryData> employeesalarydata = [
+    EmployeeSalaryData(employeeID: "22934", name: "Jash Mehta", designation: "Android Developer", status: "Pending"),
+    EmployeeSalaryData(employeeID: "33456", name: "Danish Khan", designation: "Flutter Developer", status: "Paid"),
+    EmployeeSalaryData(employeeID: "77784", name: "Vivek Patel", designation: "Ass.Teacher", status: "Pending"),
+      EmployeeSalaryData(employeeID: "22934", name: "Jash Mehta", designation: "Android Developer", status: "Pending"),
+    EmployeeSalaryData(employeeID: "33456", name: "Danish Khan", designation: "Flutter Developer", status: "Paid"),
+    EmployeeSalaryData(employeeID: "77784", name: "Vivek Patel", designation: "Ass.Teacher", status: "Pending"),
+      EmployeeSalaryData(employeeID: "22934", name: "Jash Mehta", designation: "Android Developer", status: "Pending"),
+    EmployeeSalaryData(employeeID: "33456", name: "Danish Khan", designation: "Flutter Developer", status: "Paid"),
+    EmployeeSalaryData(employeeID: "77784", name: "Vivek Patel", designation: "Ass.Teacher", status: "Pending"),
+      EmployeeSalaryData(employeeID: "22934", name: "Jash Mehta", designation: "Android Developer", status: "Pending"),
+    EmployeeSalaryData(employeeID: "33456", name: "Danish Khan", designation: "Flutter Developer", status: "Paid"),
+    EmployeeSalaryData(employeeID: "77784", name: "Vivek Patel", designation: "Ass.Teacher", status: "Pending"),
+      EmployeeSalaryData(employeeID: "22934", name: "Jash Mehta", designation: "Android Developer", status: "Pending"),
+    EmployeeSalaryData(employeeID: "33456", name: "Danish Khan", designation: "Flutter Developer", status: "Paid"),
+    EmployeeSalaryData(employeeID: "77784", name: "Vivek Patel", designation: "Ass.Teacher", status: "Pending")
+  ];

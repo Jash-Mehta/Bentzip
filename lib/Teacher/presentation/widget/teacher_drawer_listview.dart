@@ -1,19 +1,22 @@
+
 import 'package:bentzip/MainScreen/screens/responsive.dart';
 import 'package:flutter/material.dart';
 
-class InstitutionListview extends StatefulWidget {
-  String title;
+class TeacherDrawerListview extends StatefulWidget {
+
+ String title;
   String icon;
-  InstitutionListview({
+  TeacherDrawerListview({
     Key? key,
     required this.title,
     required this.icon,
   }) : super(key: key);
   @override
-  _InstitutionListviewState createState() => _InstitutionListviewState();
+  _TeacherDrawerListviewState createState() => _TeacherDrawerListviewState();
 }
 
-class _InstitutionListviewState extends State<InstitutionListview> {
+class _TeacherDrawerListviewState extends State<TeacherDrawerListview> {
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -52,3 +55,4 @@ class _InstitutionListviewState extends State<InstitutionListview> {
     );
   }
 }
+ 

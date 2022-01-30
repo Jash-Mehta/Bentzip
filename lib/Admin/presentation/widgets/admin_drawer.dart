@@ -18,7 +18,12 @@ class _AdminDrawerState extends State<AdminDrawer> {
           children: [
             Row(children: [
               IconButton(
-                  onPressed: () {}, icon: Icon(Icons.admin_panel_settings)),
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.admin_panel_settings,
+                    color: Colors.blue[800],
+                    size: 30.0,
+                  )),
               Text(
                 "ADMIN",
                 style: TextStyle(
@@ -31,6 +36,7 @@ class _AdminDrawerState extends State<AdminDrawer> {
               height: 13.0,
             ),
             /**
+             * ! Techer and student screen need to be change.....
              Teacher Details.....
              */
             InkWell(
@@ -86,6 +92,7 @@ class _AdminDrawerState extends State<AdminDrawer> {
               height: 8.0,
             ),
             /**
+             * ! left in drawer.....
              Examination Schedule.......
              */
             InstitutionListview(
@@ -120,6 +127,7 @@ class _AdminDrawerState extends State<AdminDrawer> {
               height: 8.0,
             ),
             /**
+             * ! Left in drawer.....
             Transportation.......
             */
             InstitutionListview(
@@ -130,22 +138,37 @@ class _AdminDrawerState extends State<AdminDrawer> {
             /**
             Syllabus.......
              */
-            InstitutionListview(title: "Syllabus", icon: "assets/syllabus.png"),
+            InkWell(
+                onTap: () {
+                  Navigator.pushNamed(context, '/syllabus');
+                },
+                child: InstitutionListview(
+                    title: "Syllabus", icon: "assets/syllabus.png")),
             const SizedBox(
               height: 8.0,
             ),
             /**
              About Us.....
              */
-            InstitutionListview(title: "About Us", icon: "assets/About.png"),
+            InkWell(
+                onTap: () {
+                  Navigator.pushNamed(context, '/aboutus');
+                },
+                child: InstitutionListview(
+                    title: "About Us", icon: "assets/About.png")),
             const SizedBox(
               height: 8.0,
             ),
             /**
              Contact Us.....
              */
-            InstitutionListview(
-                title: "Contact Us", icon: "assets/addphone.png"),
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, '/contact');
+              },
+              child: InstitutionListview(
+                  title: "Contact Us", icon: "assets/addphone.png"),
+            ),
             const SizedBox(
               height: 8.0,
             ),

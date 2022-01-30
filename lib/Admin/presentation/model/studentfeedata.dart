@@ -1,74 +1,155 @@
 class StudentFeeData {
-  String name;
-  int accountNo;
   String studentid;
-  String paiddate;
-  String paymentmode;
-  String amountpaid;
+  String name;
+  String division;
+  String status;
+  String pendingmonths;
   StudentFeeData({
-    required this.name,
-    required this.accountNo,
     required this.studentid,
-    required this.paiddate,
-    required this.paymentmode,
-    required this.amountpaid,
+    required this.name,
+    required this.division,
+    required this.status,
+    required this.pendingmonths,
   });
 }
- List<StudentFeeData> feedata = [
-    StudentFeeData(
-        name: "Jash",
-        accountNo: 23232323232,
-        studentid: "T244",
-        paiddate: "24-12-23",
-        paymentmode: "Cash",
-        amountpaid: "2350000"),
-    StudentFeeData(
-        name: "Jash",
-        accountNo: 23232323232,
-        studentid: "T244",
-        paiddate: "24-12-23",
-        paymentmode: "Cash",
-        amountpaid: "2350000"),
-    StudentFeeData(
-        name: "Jash",
-        accountNo: 23232323232,
-        studentid: "T244",
-        paiddate: "24-12-23",
-        paymentmode: "Cash",
-        amountpaid: "2350000"),
-    StudentFeeData(
-        name: "Jash",
-        accountNo: 23232323232,
-        studentid: "T244",
-        paiddate: "24-12-23",
-        paymentmode: "Cash",
-        amountpaid: "2350000"),
-    StudentFeeData(
-        name: "Jash",
-        accountNo: 23232323232,
-        studentid: "T244",
-        paiddate: "24-12-23",
-        paymentmode: "Cash",
-        amountpaid: "2350000"),
-    StudentFeeData(
-        name: "Jash",
-        accountNo: 23232323232,
-        studentid: "T244",
-        paiddate: "24-12-23",
-        paymentmode: "Cash",
-        amountpaid: "2350000"),
-    StudentFeeData(
-        name: "Jash",
-        accountNo: 23232323232,
-        studentid: "T244",
-        paiddate: "24-12-23",
-        paymentmode: "Cash",
-        amountpaid: "2350000"),
-    StudentFeeData(
-        name: "Jash",
-        accountNo: 23232323232,
-        studentid: "T244",
-        paiddate: "24-12-23",
-        paymentmode: "Cash",
-        amountpaid: "2350000"),
-  ];
+
+List<StudentFeeData> feedata = [
+  StudentFeeData(
+      studentid: "22567",
+      name: "Jash M",
+      division: "12",
+      status: "Paid",
+      pendingmonths: "Aug"),
+  StudentFeeData(
+      studentid: "44578",
+      name: "Danish K",
+      division: "11",
+      status: "Pending",
+      pendingmonths: "Jan"),
+  StudentFeeData(
+      studentid: "22567",
+      name: "Jash M",
+      division: "12",
+      status: "Paid",
+      pendingmonths: "Aug"),
+  StudentFeeData(
+      studentid: "44578",
+      name: "Danish K",
+      division: "11",
+      status: "Pending",
+      pendingmonths: "Jan"),
+  StudentFeeData(
+      studentid: "22567",
+      name: "Jash M",
+      division: "12",
+      status: "Paid",
+      pendingmonths: "Aug"),
+  StudentFeeData(
+      studentid: "44578",
+      name: "Danish K",
+      division: "11",
+      status: "Pending",
+      pendingmonths: "Jan"),
+  StudentFeeData(
+      studentid: "22567",
+      name: "Jash M",
+      division: "12",
+      status: "Paid",
+      pendingmonths: "Aug"),
+  StudentFeeData(
+      studentid: "44578",
+      name: "Danish K",
+      division: "11",
+      status: "Pending",
+      pendingmonths: "Jan"),
+  StudentFeeData(
+      studentid: "22567",
+      name: "Jash M",
+      division: "12",
+      status: "Paid",
+      pendingmonths: "Aug"),
+  StudentFeeData(
+      studentid: "44578",
+      name: "Danish K",
+      division: "11",
+      status: "Pending",
+      pendingmonths: "Jan"),
+  StudentFeeData(
+      studentid: "00734",
+      name: "Vivek P",
+      division: "8",
+      status: "Paid",
+      pendingmonths: "Dec"),
+  StudentFeeData(
+      studentid: "22567",
+      name: "Jash M",
+      division: "12",
+      status: "Paid",
+      pendingmonths: "Aug"),
+  StudentFeeData(
+      studentid: "44578",
+      name: "Danish K",
+      division: "11",
+      status: "Pending",
+      pendingmonths: "Jan"),
+  StudentFeeData(
+      studentid: "00734",
+      name: "Vivek P",
+      division: "8",
+      status: "Paid",
+      pendingmonths: "Dec"),
+  StudentFeeData(
+      studentid: "22567",
+      name: "Jash M",
+      division: "12",
+      status: "Paid",
+      pendingmonths: "Aug"),
+  StudentFeeData(
+      studentid: "44578",
+      name: "Danish K",
+      division: "11",
+      status: "Pending",
+      pendingmonths: "Jan"),
+  StudentFeeData(
+      studentid: "00734",
+      name: "Vivek P",
+      division: "8",
+      status: "Paid",
+      pendingmonths: "Dec"),
+  StudentFeeData(
+      studentid: "22567",
+      name: "Jash M",
+      division: "12",
+      status: "Paid",
+      pendingmonths: "Aug"),
+  StudentFeeData(
+      studentid: "44578",
+      name: "Danish K",
+      division: "11",
+      status: "Pending",
+      pendingmonths: "Jan"),
+  StudentFeeData(
+      studentid: "00734",
+      name: "Vivek P",
+      division: "8",
+      status: "Paid",
+      pendingmonths: "Dec"),
+  StudentFeeData(
+      studentid: "22567",
+      name: "Jash M",
+      division: "12",
+      status: "Paid",
+      pendingmonths: "Aug"),
+  StudentFeeData(
+      studentid: "44578",
+      name: "Danish K",
+      division: "11",
+      status: "Pending",
+      pendingmonths: "Jan"),
+  StudentFeeData(
+      studentid: "00734",
+      name: "Vivek P",
+      division: "8",
+      status: "Paid",
+      pendingmonths: "Dec"),
+];

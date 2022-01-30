@@ -60,9 +60,10 @@ class _ActivitiesState extends State<Activities>
                   radius: 23.0,
                   backgroundColor: Colors.blue[800],
                   child: Image.asset(
-                    "assets/inventoryflow.png",
+                    "assets/activities.png",
                     width: 30.0,
                     height: 30.0,
+                    color: Colors.white,
                   ),
                 ),
               ),

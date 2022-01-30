@@ -1,14 +1,5 @@
-import 'package:bentzip/Admin/presentation/screens/account.dart';
-import 'package:bentzip/Admin/presentation/screens/activitie.dart';
-import 'package:bentzip/Admin/presentation/screens/application_approval.dart';
-import 'package:bentzip/Admin/presentation/screens/cooridnates_screen.dart';
-import 'package:bentzip/Admin/presentation/screens/dashboard.dart';
-import 'package:bentzip/Admin/presentation/screens/inventory.dart';
-import 'package:bentzip/Admin/presentation/screens/loginscreen.dart';
-import 'package:bentzip/Admin/presentation/screens/notice.dart';
-import 'package:bentzip/Admin/presentation/screens/teacher_screen.dart';
-import 'package:bentzip/MainScreen/screens/selection_screen.dart';
-import 'package:flutter/material.dart';
+import 'package:bentzip/MainScreen/screens/exportwidget.dart';
+import 'package:bentzip/Teacher/presentation/screens/teacher_attendance.dart';
 
 class AppRouter {
   Route? onGenerateRoute(RouteSettings routesetting) {
@@ -58,11 +49,38 @@ class AppRouter {
          */
       case '/applicationapproval':
         return MaterialPageRoute(builder: (_) => ApplicationApproval());
-              /**
+      /**
         Activities Screen.....
          */
       case '/activities':
         return MaterialPageRoute(builder: (_) => Activities());
+      /**
+        Contact Screen.....
+         */
+      case '/contact':
+        return MaterialPageRoute(builder: (_) => ContactScreen());
+      /**
+       Syllabus.....
+         */
+      case '/syllabus':
+        return MaterialPageRoute(builder: (_) => Syllabus());
+              /**
+       Aboutus.....
+         */
+      case '/aboutus':
+        return MaterialPageRoute(builder: (_) => AboutUs());
+        /**
+         * ! Teacher Screen Start from here.......
+          Teacher DashBoard.......
+         */
+
+            case '/techerdashboard':
+        return MaterialPageRoute(builder: (_) => TeacherDashboard());
+        /**
+         Teacher Attendance.....
+         */
+            case '/teacherattendance':
+        return MaterialPageRoute(builder: (_) => TeacherAttendance());
       default:
         return null;
     }

@@ -15,8 +15,8 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
-      child: Responsive.isMobile(context)
-          ? SingleChildScrollView(
+      child: 
+           SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [    
@@ -114,7 +114,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ],
               ),
             )
-          : Text("App is not ready for this device"),
+         
     ));
   }
 }

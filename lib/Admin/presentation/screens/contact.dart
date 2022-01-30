@@ -1,18 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class NoticeScreen extends StatefulWidget {
-  const NoticeScreen({Key? key}) : super(key: key);
+class ContactScreen extends StatefulWidget {
+  const ContactScreen({Key? key}) : super(key: key);
 
   @override
-  _NoticeScreenState createState() => _NoticeScreenState();
+  _ContactScreenState createState() => _ContactScreenState();
 }
 
-class _NoticeScreenState extends State<NoticeScreen> {
-  List field = [];
-  Color _iconColor = Colors.grey;
+class _ContactScreenState extends State<ContactScreen> {
   @override
   Widget build(BuildContext context) {
+    List field = [];
     return Scaffold(
         appBar: AppBar(
           elevation: 0.0,
@@ -47,7 +46,7 @@ class _NoticeScreenState extends State<NoticeScreen> {
                   radius: 23.0,
                   backgroundColor: Colors.blue[800],
                   child: Image.asset(
-                    "assets/whitenoticeboard.png",
+                    "assets/whitephone.png",
                     width: 30.0,
                     height: 30.0,
                   ),
@@ -56,7 +55,7 @@ class _NoticeScreenState extends State<NoticeScreen> {
               Padding(
                 padding: const EdgeInsets.only(top: 15.0),
                 child: Text(
-                  "Notice",
+                  "Contact",
                   style: TextStyle(
                       color: Colors.blue[800],
                       fontSize: 24.0,
@@ -93,26 +92,11 @@ class _NoticeScreenState extends State<NoticeScreen> {
                         left: 15.0, right: 15.0, top: 15.0),
                     child: TextFormField(
                         // controller: _controller,
-                        decoration: InputDecoration(
-                            suffixIcon: IconButton(
-                                onPressed: () {
-                                  setState(() {
-                                    if (_iconColor == Colors.grey) {
-                                      _iconColor = Colors.yellow;
-                                    } else {
-                                      _iconColor = Colors.grey;
-                                    }
-                                  });
-                                },
-                                icon: Icon(
-                                  Icons.star,
-                                  color: _iconColor,
-                                  size: 35.0,
-                                )),
+                        decoration: const InputDecoration(
                             enabledBorder: InputBorder.none,
                             focusedBorder: InputBorder.none,
                             hintText: "Type....",
-                            hintStyle: const TextStyle(
+                            hintStyle: TextStyle(
                               color: Colors.black54,
                               fontSize: 20.0,
                             ))),

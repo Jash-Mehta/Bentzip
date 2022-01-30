@@ -59,11 +59,8 @@ class _InventoryScreenState extends State<InventoryScreen>
                 child: CircleAvatar(
                   radius: 23.0,
                   backgroundColor: Colors.blue[800],
-                  child: Image.asset(
-                    "assets/inventoryflow.png",
-                    width: 30.0,
-                    height: 30.0,
-                  ),
+                  child: Image.asset("assets/inventoryflow.png",
+                      width: 30.0, height: 30.0, color: Colors.white),
                 ),
               ),
               Padding(
