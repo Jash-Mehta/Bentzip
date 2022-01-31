@@ -64,7 +64,7 @@ class Teacherdrawer extends StatelessWidget {
              */
           InkWell(
               onTap: () {
-                Navigator.pushNamed(context, '');
+                Navigator.pushNamed(context, '/teachernotice');
               },
               child: TeacherDrawerListview(
                   title: "Notice", icon: "assets/noticeboard.png")),

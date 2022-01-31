@@ -1,35 +1,23 @@
-import 'package:bentzip/MainScreen/screens/responsive.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:bentzip/Teacher/presentation/widget/generalappbar.dart';
 import 'package:flutter/material.dart';
 
-class TeacherAttendance extends StatelessWidget {
-  const TeacherAttendance({Key? key}) : super(key: key);
+class TeacherNotice extends StatefulWidget {
+  const TeacherNotice({Key? key}) : super(key: key);
 
+  @override
+  _TeacherNoticeState createState() => _TeacherNoticeState();
+}
+
+class _TeacherNoticeState extends State<TeacherNotice> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0.0,
-        backgroundColor: Colors.white,
-        title: Text(
-          "ATTENDANCE",
-          style: TextStyle(
-            color: Colors.blue[800],
-            fontWeight: FontWeight.bold,
-            fontSize: Responsive.issmallmobile(context) ? 25 : 22,
-          ),
-        ),
-        leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: const Icon(
-              CupertinoIcons.back,
-              color: Colors.black,
-              size: 30.0,
-            )),
-        actions: [Image.asset('assets/logo.png')],
-      ),
+      appBar: GeneralAppBar(
+          appbartitle: "Notice",
+          onpressed: () {
+            print("onclick");
+            Navigator.pop(context);
+          }),
       body: Column(
         children: [
           Container(
@@ -93,11 +81,11 @@ class TeacherAttendance extends StatelessWidget {
           ),
           /**
            Navigator start from here........
-           Attendance student listview.........
+           Teacher NoticeScreen.........
            */
           ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/attendancelistview');
+                Navigator.pushNamed(context, '');
               },
               child: Text("Submit"))
         ],

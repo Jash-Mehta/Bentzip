@@ -1,5 +1,5 @@
 import 'package:bentzip/MainScreen/screens/exportwidget.dart';
-import 'package:bentzip/Teacher/presentation/screens/teacher_attendance.dart';
+import 'package:bentzip/Teacher/presentation/screens/teacher_notice.dart';
 
 class AppRouter {
   Route? onGenerateRoute(RouteSettings routesetting) {
@@ -64,23 +64,33 @@ class AppRouter {
          */
       case '/syllabus':
         return MaterialPageRoute(builder: (_) => Syllabus());
-              /**
+      /**
        Aboutus.....
          */
       case '/aboutus':
         return MaterialPageRoute(builder: (_) => AboutUs());
-        /**
+      /**
          * ! Teacher Screen Start from here.......
           Teacher DashBoard.......
          */
 
-            case '/techerdashboard':
+      case '/techerdashboard':
         return MaterialPageRoute(builder: (_) => TeacherDashboard());
-        /**
+      /**
          Teacher Attendance.....
          */
-            case '/teacherattendance':
+      case '/teacherattendance':
         return MaterialPageRoute(builder: (_) => TeacherAttendance());
+      /**
+         Teacher Attendance listview Screen.......
+         */
+      case '/attendancelistview':
+        return MaterialPageRoute(builder: (_) => AttendanceStudentlist());
+      /**
+         Teacher Notice Screen.......
+         */
+      case '/teachernotice':
+        return MaterialPageRoute(builder: (_) => TeacherNotice());
       default:
         return null;
     }
