@@ -1,5 +1,7 @@
 import 'package:bentzip/MainScreen/screens/exportwidget.dart';
-import 'package:bentzip/Teacher/presentation/screens/teacher_notice.dart';
+import 'package:bentzip/Teacher/presentation/screens/notes_screen/notesscreen.dart';
+import 'package:bentzip/Teacher/presentation/screens/noticescreen/teacher_notice.dart';
+import 'package:bentzip/Teacher/presentation/screens/teacher_studentdetail.dart';
 
 class AppRouter {
   Route? onGenerateRoute(RouteSettings routesetting) {
@@ -7,6 +9,9 @@ class AppRouter {
       case '/':
         return MaterialPageRoute(builder: (_) => Selection_screen());
         break;
+      /**
+         * ! Admin Screen Start from here......
+         */
       case '/admin':
         return MaterialPageRoute(builder: (_) => LoginScreen());
         break;
@@ -70,8 +75,9 @@ class AppRouter {
       case '/aboutus':
         return MaterialPageRoute(builder: (_) => AboutUs());
       /**
+       * ! Admin Screen end here.....
          * ! Teacher Screen Start from here.......
-          Teacher DashBoard.......
+           Teacher DashBoard.......
          */
 
       case '/techerdashboard':
@@ -91,6 +97,16 @@ class AppRouter {
          */
       case '/teachernotice':
         return MaterialPageRoute(builder: (_) => TeacherNotice());
+              /**
+         Teacher Notes Screen.......
+         */
+      case '/teachernotes':
+        return MaterialPageRoute(builder: (_) => TeacherNotes());
+                      /**
+         Teacher Studentdetail Screen.......
+         */
+      case '/teacherstudentdetail':
+        return MaterialPageRoute(builder: (_) => Teacherstudentdetail());
       default:
         return null;
     }

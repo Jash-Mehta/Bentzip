@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         onGenerateRoute: appRouter.onGenerateRoute,
+
         home: const Selection_screen());
   }
 }

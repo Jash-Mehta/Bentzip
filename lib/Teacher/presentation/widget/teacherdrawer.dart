@@ -51,7 +51,7 @@ class Teacherdrawer extends StatelessWidget {
              Student Details....... 
              */
           InkWell(
-            onTap: () => Navigator.pushNamed(context, ''),
+            onTap: () => Navigator.pushNamed(context, '/teacherstudentdetail'),
             child: TeacherDrawerListview(
                 title: "Student Details", icon: "assets/blueuser.png"),
           ),
@@ -91,7 +91,7 @@ class Teacherdrawer extends StatelessWidget {
             height: 8.0,
           ),
           InkWell(
-            onTap: () => Navigator.pushNamed(context, ''),
+            onTap: () => Navigator.pushNamed(context, '/teachernotes'),
             child: TeacherDrawerListview(
                 title: "Notes", icon: "assets/noticeboard.png"),
           ),
