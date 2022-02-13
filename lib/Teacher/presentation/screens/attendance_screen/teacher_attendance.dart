@@ -23,10 +23,10 @@ class TeacherAttendance extends StatelessWidget {
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: const Icon(
+            icon: Icon(
               CupertinoIcons.back,
               color: Colors.black,
-              size: 30.0,
+              size: Responsive.issmallmobile(context) ? 32 : 30,
             )),
         actions: [Image.asset('assets/logo.png')],
       ),
@@ -44,13 +44,19 @@ class TeacherAttendance extends StatelessWidget {
                   ),
                 ],
                 borderRadius: BorderRadius.circular(10.0)),
-            child: TextFormField(
-              decoration: const InputDecoration(
-                  hintText: "  Class",
-                  hintStyle: TextStyle(color: Colors.black54, fontSize: 22.0),
-                  focusedBorder: InputBorder.none,
-                  enabledBorder: InputBorder.none),
-              keyboardType: TextInputType.text,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 10.0),
+              child: TextFormField(
+                decoration: const InputDecoration(
+                    hintText: "Class",
+                    hintStyle: TextStyle(
+                      color: Colors.black54,
+                      fontSize: 22.0,
+                    ),
+                    focusedBorder: InputBorder.none,
+                    enabledBorder: InputBorder.none),
+                keyboardType: TextInputType.text,
+              ),
             ),
           ),
           SizedBox(
@@ -88,18 +94,31 @@ class TeacherAttendance extends StatelessWidget {
               onChanged: (_) {},
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20.0,
           ),
           /**
            Navigator start from here........
            Attendance student listview.........
            */
-          ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/attendancelistview');
-              },
-              child: Text("Submit"))
+          SizedBox(
+            height: 45.0,
+            width: Responsive.issmallmobile(context)
+                ? MediaQuery.of(context).size.width * 0.70
+                : MediaQuery.of(context).size.width * 0.65,
+            child: ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: Colors.blue[900]),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/attendancelistview');
+                },
+                child: const Text(
+                  "Submit",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.w500),
+                )),
+          ),
         ],
       ),
     );

@@ -50,7 +50,7 @@ class _DetailScreenState extends State<DetailScreen> {
                   ),
                 ),
               ),
-              keyboardType: TextInputType.visiblePassword,
+              keyboardType: TextInputType.name,
             ),
           ),
         ),

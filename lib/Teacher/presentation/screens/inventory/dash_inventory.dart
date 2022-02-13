@@ -1,17 +1,16 @@
 import 'package:bentzip/MainScreen/screens/responsive.dart';
+import 'package:bentzip/Teacher/presentation/screens/inventory/teacher_inventory.dart';
 import 'package:bentzip/Teacher/presentation/widget/generalappbar.dart';
 import 'package:flutter/material.dart';
 
-import 'notice_divscreen.dart';
-
-class TeacherNotice extends StatefulWidget {
-  const TeacherNotice({Key? key}) : super(key: key);
+class DashInventory extends StatefulWidget {
+  const DashInventory({Key? key}) : super(key: key);
 
   @override
-  _TeacherNoticeState createState() => _TeacherNoticeState();
+  _DashInventoryState createState() => _DashInventoryState();
 }
 
-class _TeacherNoticeState extends State<TeacherNotice> {
+class _DashInventoryState extends State<DashInventory> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -99,7 +98,7 @@ class _TeacherNoticeState extends State<TeacherNotice> {
                 style: ElevatedButton.styleFrom(primary: Colors.blue[900]),
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => NoticeDivScreen()));
+                      MaterialPageRoute(builder: (_) => TeacherInventory()));
                 },
                 child: const Text(
                   "Submit",

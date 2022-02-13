@@ -1,24 +1,19 @@
-import 'package:bentzip/MainScreen/screens/responsive.dart';
-import 'package:bentzip/Teacher/presentation/widget/generalappbar.dart';
-import 'package:flutter/material.dart';
+import 'package:bentzip/MainScreen/screens/exportwidget.dart';
 
-import 'notice_divscreen.dart';
-
-class TeacherNotice extends StatefulWidget {
-  const TeacherNotice({Key? key}) : super(key: key);
+class DashPerformance extends StatefulWidget {
+  const DashPerformance({Key? key}) : super(key: key);
 
   @override
-  _TeacherNoticeState createState() => _TeacherNoticeState();
+  _DashPerformanceState createState() => _DashPerformanceState();
 }
 
-class _TeacherNoticeState extends State<TeacherNotice> {
+class _DashPerformanceState extends State<DashPerformance> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: GeneralAppBar(
-          appbartitle: "NOTICE",
+          appbartitle: "PERFORMANCE",
           onpressed: () {
-            print("onclick");
             Navigator.pop(context);
           }),
       body: Column(
@@ -87,7 +82,7 @@ class _TeacherNoticeState extends State<TeacherNotice> {
           ),
           /**
            Navigator start from here........
-           Teacher NoticeScreen.........
+           Teacher Studednt Performance Screen.........
            And Noticescreen navigator is not 
            */
           SizedBox(
@@ -99,7 +94,7 @@ class _TeacherNoticeState extends State<TeacherNotice> {
                 style: ElevatedButton.styleFrom(primary: Colors.blue[900]),
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => NoticeDivScreen()));
+                      MaterialPageRoute(builder: (_) => PerformanceStudList()));
                 },
                 child: const Text(
                   "Submit",

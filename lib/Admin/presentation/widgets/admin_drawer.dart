@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'institutions_listview.dart';
 
@@ -42,7 +41,7 @@ class _AdminDrawerState extends State<AdminDrawer> {
             InkWell(
               onTap: () => Navigator.pushNamed(context, '/teachers'),
               child: InstitutionListview(
-                  title: "Teacher Details", icon: "assets/blueteacher.png"),
+                  title: "Teacher", icon: "assets/blueteacher.png"),
             ),
             const SizedBox(
               height: 8.0,
@@ -53,7 +52,7 @@ class _AdminDrawerState extends State<AdminDrawer> {
             InkWell(
               onTap: () => Navigator.pushNamed(context, '/cooridnates'),
               child: InstitutionListview(
-                  title: "Student Details", icon: "assets/blueuser.png"),
+                  title: "Student", icon: "assets/blueuser.png"),
             ),
             const SizedBox(
               height: 8.0,
@@ -64,7 +63,7 @@ class _AdminDrawerState extends State<AdminDrawer> {
             InkWell(
               onTap: () => Navigator.pushNamed(context, '/accountdepartment'),
               child: InstitutionListview(
-                  title: "Accounts Department", icon: "assets/cashbook.png"),
+                  title: "Accounts", icon: "assets/cashbook.png"),
             ),
             /**
              Inventory.......
@@ -96,7 +95,7 @@ class _AdminDrawerState extends State<AdminDrawer> {
              Examination Schedule.......
              */
             InstitutionListview(
-                title: "Examination Schedule", icon: "assets/examschedule.png"),
+                title: "Examination", icon: "assets/examschedule.png"),
             const SizedBox(
               height: 8.0,
             ),
@@ -108,7 +107,7 @@ class _AdminDrawerState extends State<AdminDrawer> {
                 Navigator.pushNamed(context, '/applicationapproval');
               },
               child: InstitutionListview(
-                  title: "Application Approval", icon: "assets/approval.png"),
+                  title: "Application", icon: "assets/approval.png"),
             ),
             const SizedBox(
               height: 8.0,

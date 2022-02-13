@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 class Teacherdrawer extends StatelessWidget {
   const Teacherdrawer({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -79,7 +78,7 @@ class Teacherdrawer extends StatelessWidget {
                 Navigator.pushNamed(context, '');
               },
               child: TeacherDrawerListview(
-                  title: "Result", icon: "assets/syllabus.png")),
+                  title: "Result", icon: "assets/testresults.png")),
           const SizedBox(
             height: 8.0,
           ),
@@ -92,8 +91,8 @@ class Teacherdrawer extends StatelessWidget {
           ),
           InkWell(
             onTap: () => Navigator.pushNamed(context, '/teachernotes'),
-            child: TeacherDrawerListview(
-                title: "Notes", icon: "assets/noticeboard.png"),
+            child:
+                TeacherDrawerListview(title: "Notes", icon: "assets/notes.png"),
           ),
           const SizedBox(
             height: 8.0,
@@ -103,20 +102,25 @@ class Teacherdrawer extends StatelessWidget {
            */
           InkWell(
             onTap: () {
-              Navigator.pushNamed(context, '');
+              Navigator.pushNamed(context, '/teacherapplicationapp');
             },
             child: TeacherDrawerListview(
-                title: "Applications", icon: "assets/approval.png"),
+                title: "Applications", icon: "assets/Form.png"),
           ),
           const SizedBox(
             height: 8.0,
           ),
           /**
-             * ! left in drawer.....
+             
              Student Performance.......
              */
-          TeacherDrawerListview(
-              title: "Student Performance", icon: "assets/examschedule.png"),
+          InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, '/teacherstudentperformance');
+            },
+            child: TeacherDrawerListview(
+                title: "Student Performance", icon: "assets/result.png"),
+          ),
           const SizedBox(
             height: 8.0,
           ),
@@ -125,10 +129,10 @@ class Teacherdrawer extends StatelessWidget {
            */
           InkWell(
             onTap: () {
-              Navigator.pushNamed(context, '');
+              Navigator.pushNamed(context, '/teacherinventory');
             },
             child: TeacherDrawerListview(
-                title: "Inventory", icon: "assets/approval.png"),
+                title: "Inventory", icon: "assets/inventoryflow.png"),
           ),
           const SizedBox(
             height: 8.0,
@@ -149,7 +153,6 @@ class Teacherdrawer extends StatelessWidget {
           ),
 
           /**
-             * ! Left in drawer.....
             Transportation.......
             */
           TeacherDrawerListview(

@@ -1,7 +1,7 @@
 import 'package:bentzip/MainScreen/screens/exportwidget.dart';
-import 'package:bentzip/Teacher/presentation/screens/notes_screen/notesscreen.dart';
-import 'package:bentzip/Teacher/presentation/screens/noticescreen/teacher_notice.dart';
-import 'package:bentzip/Teacher/presentation/screens/teacher_studentdetail.dart';
+import 'package:bentzip/Teacher/presentation/screens/StudentPerformance/dash_performance.dart';
+import 'package:bentzip/Teacher/presentation/screens/inventory/dash_inventory.dart';
+import 'package:bentzip/Teacher/presentation/screens/inventory/teacher_inventory.dart';
 
 class AppRouter {
   Route? onGenerateRoute(RouteSettings routesetting) {
@@ -97,16 +97,31 @@ class AppRouter {
          */
       case '/teachernotice':
         return MaterialPageRoute(builder: (_) => TeacherNotice());
-              /**
+      /**
          Teacher Notes Screen.......
          */
       case '/teachernotes':
         return MaterialPageRoute(builder: (_) => TeacherNotes());
-                      /**
+      /**
          Teacher Studentdetail Screen.......
          */
       case '/teacherstudentdetail':
         return MaterialPageRoute(builder: (_) => Teacherstudentdetail());
+      /**
+         Teacher Application Approval Screen.......
+         */
+      case '/teacherapplicationapp':
+        return MaterialPageRoute(builder: (_) => TeacherApprovalDash());
+              /**
+         Teacher Inventory Screen.......
+         */
+      case '/teacherinventory':
+        return MaterialPageRoute(builder: (_) => DashInventory());
+                      /**
+         Teacher Student Performance Screen........
+         */
+      case '/teacherstudentperformance':
+        return MaterialPageRoute(builder: (_) => DashPerformance());
       default:
         return null;
     }
