@@ -73,15 +73,15 @@ class Teacherdrawer extends StatelessWidget {
           /**
             Result.......
              */
-          InkWell(
-              onTap: () {
-                Navigator.pushNamed(context, '');
-              },
-              child: TeacherDrawerListview(
-                  title: "Result", icon: "assets/testresults.png")),
-          const SizedBox(
-            height: 8.0,
-          ),
+          // InkWell(
+          //     onTap: () {
+          //       Navigator.pushNamed(context, '');
+          //     },
+          //     child: TeacherDrawerListview(
+          //         title: "Result", icon: "assets/testresults.png")),
+          // const SizedBox(
+          //   height: 8.0,
+          //),
 
           /**
              Notes.......

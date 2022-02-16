@@ -50,6 +50,14 @@ class _AttendanceStudentlistState extends State<AttendanceStudentlist> {
           ))
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(
+          Icons.post_add,
+          color: Colors.white,
+        ),
+        backgroundColor: Colors.blue[800],
+      ),
     );
   }
 }
