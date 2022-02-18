@@ -2,6 +2,7 @@ import 'package:bentzip/MainScreen/screens/exportwidget.dart';
 import 'package:bentzip/Teacher/presentation/screens/StudentPerformance/dash_performance.dart';
 import 'package:bentzip/Teacher/presentation/screens/inventory/dash_inventory.dart';
 import 'package:bentzip/Teacher/presentation/screens/inventory/teacher_inventory.dart';
+import 'package:bentzip/Teacher/presentation/screens/transportation/dash_transportation.dart';
 
 class AppRouter {
   Route? onGenerateRoute(RouteSettings routesetting) {
@@ -122,6 +123,12 @@ class AppRouter {
          */
       case '/teacherstudentperformance':
         return MaterialPageRoute(builder: (_) => DashPerformance());
+                              /**
+         Teacher Transportation Screen........
+
+         */
+                    case '/teachertransportation':
+        return MaterialPageRoute(builder: (_) => DashTransportation());
       default:
         return null;
     }

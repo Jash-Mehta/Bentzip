@@ -15,7 +15,7 @@ class _DashInventoryState extends State<DashInventory> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: GeneralAppBar(
-          appbartitle: "NOTICE",
+          appbartitle: "INVENTORY",
           onpressed: () {
             print("onclick");
             Navigator.pop(context);
@@ -86,8 +86,8 @@ class _DashInventoryState extends State<DashInventory> {
           ),
           /**
            Navigator start from here........
-           Teacher NoticeScreen.........
-           And Noticescreen navigator is not 
+           Teacher Inventory.........
+           And InventoryScreen navigator is not 
            */
           SizedBox(
             height: 45.0,

@@ -62,7 +62,7 @@ class _PerformanceResultState extends State<PerformanceResult> {
             ),
           ),
           const SizedBox(
-            height: 10.0,
+            height: 8.0,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -92,9 +92,6 @@ class _PerformanceResultState extends State<PerformanceResult> {
                 ),
               )
             ],
-          ),
-          const SizedBox(
-            height: 8.0,
           ),
           Container(
             margin: const EdgeInsets.only(left: 3.0, right: 3.0, top: 10.0),
@@ -230,48 +227,36 @@ class _PerformanceResultState extends State<PerformanceResult> {
               thickness: 1.0,
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Text(
-                "Overall %",
-                style: TextStyle(color: Colors.grey[700], fontSize: 17.0),
-              ),
-              const Text(
-                "80",
-                style: TextStyle(color: Colors.grey, fontSize: 17.0),
-              )
-            ],
+          ListTile(
+            leading: Text(
+              "Overall %",
+              style: TextStyle(color: Colors.grey[700], fontSize: 17.0),
+            ),
+            title: const Text(
+              "80",
+              style: TextStyle(color: Colors.grey, fontSize: 17.0),
+            ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Text(
-                "Status",
-                style: TextStyle(color: Colors.grey[700], fontSize: 17.0),
-              ),
-              const Text(
-                "Passed",
-                style: TextStyle(color: Colors.green, fontSize: 17.0),
-              )
-            ],
+          ListTile(
+            leading: Text(
+              "Status",
+              style: TextStyle(color: Colors.grey[700], fontSize: 17.0),
+            ),
+            title: const Text(
+              "Passed",
+              style: TextStyle(color: Colors.green, fontSize: 17.0),
+            ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Text(
-                "Class Avg",
-                style: TextStyle(color: Colors.grey[700], fontSize: 17.0),
-              ),
-              Text(
-                "12",
-                style: TextStyle(color: Colors.grey[700], fontSize: 17.0),
-              )
-            ],
+          ListTile(
+            leading: Text(
+              "Class Avg",
+              style: TextStyle(color: Colors.grey[700], fontSize: 17.0),
+            ),
+            title: const Text(
+              "12",
+              style: TextStyle(color: Colors.grey, fontSize: 17.0),
+            ),
           ),
-          const SizedBox(
-            height: 20.0,
-          )
         ],
       )),
       floatingActionButton: FloatingActionButton(
