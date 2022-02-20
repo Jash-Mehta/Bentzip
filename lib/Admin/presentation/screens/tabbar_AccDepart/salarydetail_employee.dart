@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:bentzip/Admin/presentation/model/Employee_salarydata.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +9,7 @@ class EmployeeSalary extends StatefulWidget {
 }
 
 class _EmployeeSalaryState extends State<EmployeeSalary> {
+  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Column(children: [
@@ -98,13 +97,11 @@ class _EmployeeSalaryState extends State<EmployeeSalary> {
           itemBuilder: (BuildContext context, int index) {
             EmployeeSalaryData employeeSalary = employeesalarydata[index];
             return Table(
-              // border:
-              // TableBorder(verticalInside: BorderSide(color: Colors.black)),
               children: [
                 TableRow(
                     decoration: const BoxDecoration(
                         color: Colors.white,
-                        boxShadow:  [
+                        boxShadow: [
                           BoxShadow(
                             color: Colors.grey,
                             offset: Offset(0.0, 1.0), //(x,y)
@@ -120,13 +117,25 @@ class _EmployeeSalaryState extends State<EmployeeSalary> {
                             showDialog(
                               context: context,
                               builder: (BuildContext context) {
-                                return AlertDialog();
+                                return Dialog(
+                                  child: SizedBox(
+                                    height: MediaQuery.of(context).size.height *
+                                        0.4,
+                                    width:
+                                        MediaQuery.of(context).size.width * 2.0,
+                                    child: Form(
+                                        key: _formKey,
+                                        child: Column(
+                                          children: [],
+                                        )),
+                                  ),
+                                );
                               },
                             );
                           },
                           child: Text(
                             employeeSalary.employeeID,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 color: Colors.black,
                                 fontSize: 15.0,
                                 fontWeight: FontWeight.w500),
