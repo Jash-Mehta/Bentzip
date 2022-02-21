@@ -10,7 +10,7 @@ export 'package:bentzip/Admin/presentation/screens/loginscreen.dart';
 export 'package:bentzip/Admin/presentation/screens/notice.dart';
 export 'package:bentzip/MainScreen/screens/responsive.dart';
 export  'package:bentzip/Teacher/presentation/screens/StudentPerformance/performance_studlist.dart';
-export 'package:bentzip/Teacher/presentation/widget/generalappbar.dart';
+export 'package:bentzip/MainScreen/screens/generalappbar.dart';
 export 'package:bentzip/Admin/presentation/screens/syllabus.dart';
 export 'package:bentzip/Admin/presentation/screens/teacher_screen.dart';
 export 'package:bentzip/MainScreen/screens/selection_screen.dart';

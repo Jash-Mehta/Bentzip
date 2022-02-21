@@ -1,7 +1,6 @@
-import 'package:bentzip/Admin/presentation/widgets/detail.dart';
-import 'package:bentzip/MainScreen/screens/responsive.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:bentzip/Admin/presentation/model/studentfeedata.dart';
+import 'package:bentzip/Admin/presentation/screens/add_student.dart';
+import 'package:bentzip/MainScreen/screens/exportwidget.dart';
 
 class CooridnatesScreen extends StatefulWidget {
   const CooridnatesScreen({Key? key}) : super(key: key);
@@ -14,28 +13,11 @@ class _CooridnatesScreenState extends State<CooridnatesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          elevation: 0.0,
-          backgroundColor: Colors.white,
-          title: Text(
-            "ADMIN",
-            style: TextStyle(
-              color: Colors.blue[800],
-              fontWeight: FontWeight.bold,
-              fontSize: Responsive.issmallmobile(context) ? 25 : 22,
-            ),
-          ),
-          leading: IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: Icon(
-                CupertinoIcons.back,
-                color: Colors.black,
-                size: Responsive.issmallmobile(context) ? 35 : 30,
-              )),
-          actions: [Image.asset('assets/logo.png')],
-        ),
+        appBar: GeneralAppBar(
+            appbartitle: "ADMIN",
+            onpressed: () {
+              Navigator.pop(context);
+            }),
         body: SafeArea(
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -43,7 +25,7 @@ class _CooridnatesScreenState extends State<CooridnatesScreen> {
             children: [
               Padding(
                 padding:
-                    const EdgeInsets.only(left: 20.0, top: 15.0, right: 15.0),
+                    const EdgeInsets.only(left: 20.0, top: 10.0, right: 15.0),
                 child: CircleAvatar(
                   radius: 23.0,
                   backgroundColor: Colors.blue[800],
@@ -55,9 +37,9 @@ class _CooridnatesScreenState extends State<CooridnatesScreen> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 15.0),
+                padding: const EdgeInsets.only(top: 10.0),
                 child: Text(
-                  "ABOUT CO-ORIDNATES",
+                  "ABOUT STUDENTS",
                   style: TextStyle(
                       color: Colors.blue[800],
                       fontSize: Responsive.issmallmobile(context) ? 24 : 22,
@@ -68,65 +50,148 @@ class _CooridnatesScreenState extends State<CooridnatesScreen> {
             ],
           ),
           const SizedBox(height: 15.0),
-          Padding(
-            padding: EdgeInsets.only(top: 10.0, left: 30.0),
-            child: Text(
-              "Student Details",
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: Responsive.issmallmobile(context) ? 25 : 23,
-                  fontWeight: FontWeight.bold),
+          Container(
+            margin: const EdgeInsets.only(left: 15.0, right: 15.0, top: 8.0),
+            decoration: BoxDecoration(
+                color: Colors.white,
+                boxShadow: const [
+                  BoxShadow(
+                    color: Colors.grey,
+                    offset: Offset(0.0, 1.0), //(x,y)
+                    blurRadius: 6.0,
+                  ),
+                ],
+                borderRadius: BorderRadius.circular(25.0)),
+            child: TextFormField(
+              decoration: const InputDecoration(
+                  suffixIcon: Icon(Icons.search),
+                  hintText: "  Student ID",
+                  hintStyle: TextStyle(
+                    color: Colors.black54,
+                  ),
+                  focusedBorder: InputBorder.none,
+                  enabledBorder: InputBorder.none),
+              keyboardType: TextInputType.text,
             ),
           ),
-          const SizedBox(height: 15.0),
-          DetailScreen(
-              hinttext: "Name",
-              onpressedAdd: () {
-                print("Added");
-              },
-              onpressedDelete: () {
-                print("Delete");
-              }),
-          const SizedBox(height: 15.0),
-          DetailScreen(
-              hinttext: "Class",
-              onpressedAdd: () {
-                print("Added");
-              },
-              onpressedDelete: () {
-                print("Delete");
-              }),
-          const SizedBox(height: 15.0),
-          DetailScreen(
-              hinttext: "Documents",
-              onpressedAdd: () {
-                print("Added");
-              },
-              onpressedDelete: () {
-                print("Delete");
-              }),
-          Center(
-            child: Padding(
-              padding:
-                  const EdgeInsets.only(left: 15.0, right: 15.0, top: 50.0),
-              child: SizedBox(
-                height: 40.0,
-                width: MediaQuery.of(context).size.width * 0.6,
-                child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(primary: Colors.blue[900]),
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/dashboard');
-                    },
-                    child: const Text(
-                      "UPDATE",
+          Container(
+            margin: const EdgeInsets.only(left: 3.0, right: 5.0, top: 10.0),
+            child: Table(
+              children: const [
+                TableRow(children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 10.0),
+                    child: Text(
+                      "Student ID",
                       style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.bold),
-                    )),
-              ),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                          color: Colors.black),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 20.0),
+                    child: Text(
+                      "Name",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 14),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 40.0),
+                    child: Text(
+                      "Class",
+                      style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          color: Colors.black,
+                          fontSize: 15),
+                    ),
+                  ),
+                ])
+              ],
             ),
-          )
-        ])));
+          ),
+          const SizedBox(
+            height: 5.0,
+          ),
+          Expanded(
+              child: Container(
+            margin: const EdgeInsets.only(left: 10.0, right: 5.0, top: 5.0),
+            child: ListView.builder(
+              itemCount: feedata.length,
+              itemBuilder: (BuildContext context, int index) {
+                StudentFeeData studentSalary = feedata[index];
+                return Table(
+                  children: [
+                    TableRow(
+                        decoration: const BoxDecoration(
+                            color: Colors.white,
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey,
+                                offset: Offset(0.0, 1.0), //(x,y)
+                                blurRadius: 6.0,
+                              ),
+                            ],
+                            border:
+                                Border.symmetric(horizontal: BorderSide.none)),
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: InkWell(
+                              onTap: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return const AlertDialog();
+                                  },
+                                );
+                              },
+                              child: Text(
+                                studentSalary.studentid,
+                                style: const TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 15.0,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              studentSalary.name,
+                              style: const TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Center(
+                                child: Text(
+                              studentSalary.division,
+                              style: const TextStyle(color: Colors.black),
+                            )),
+                          ),
+                        ])
+                  ],
+                );
+              },
+            ),
+          )),
+        ])),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (_) => AddStudent()));
+          },
+          child: const Icon(
+            Icons.add,
+            color: Colors.white,
+          ),
+          backgroundColor: Colors.blue[800],
+        ));
   }
 }

@@ -1,5 +1,5 @@
 import 'package:bentzip/MainScreen/screens/responsive.dart';
-import 'package:bentzip/Teacher/presentation/widget/generalappbar.dart';
+import 'package:bentzip/MainScreen/screens/generalappbar.dart';
 import 'package:flutter/material.dart';
 
 import 'notice_divscreen.dart';

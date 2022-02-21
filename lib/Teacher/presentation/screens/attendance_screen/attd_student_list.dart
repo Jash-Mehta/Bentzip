@@ -1,6 +1,6 @@
 import 'package:bentzip/MainScreen/screens/exportwidget.dart';
 import 'package:bentzip/Teacher/presentation/models/studentdata.dart';
-import 'package:bentzip/Teacher/presentation/widget/generalappbar.dart';
+import 'package:bentzip/MainScreen/screens/generalappbar.dart';
 
 class AttendanceStudentlist extends StatefulWidget {
   const AttendanceStudentlist({Key? key}) : super(key: key);

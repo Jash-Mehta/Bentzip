@@ -1,5 +1,5 @@
 import 'package:bentzip/Teacher/presentation/screens/notes_screen/notes_divscreen.dart';
-import 'package:bentzip/Teacher/presentation/widget/generalappbar.dart';
+import 'package:bentzip/MainScreen/screens/generalappbar.dart';
 import 'package:flutter/material.dart';
 
 class TeacherNotes extends StatefulWidget {

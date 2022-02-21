@@ -1,7 +1,7 @@
 import 'package:bentzip/MainScreen/screens/exportwidget.dart';
 import 'package:bentzip/MainScreen/screens/responsive.dart';
 import 'package:bentzip/Teacher/presentation/screens/application/leave_list.dart';
-import 'package:bentzip/Teacher/presentation/widget/generalappbar.dart';
+import 'package:bentzip/MainScreen/screens/generalappbar.dart';
 
 class TeacherApprovalDash extends StatelessWidget {
   const TeacherApprovalDash({Key? key}) : super(key: key);

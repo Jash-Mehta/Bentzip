@@ -1,6 +1,6 @@
 import 'package:bentzip/MainScreen/screens/exportwidget.dart';
 import 'package:bentzip/MainScreen/screens/responsive.dart';
-import 'package:bentzip/Teacher/presentation/widget/generalappbar.dart';
+import 'package:bentzip/MainScreen/screens/generalappbar.dart';
 
 class NoticeDivScreen extends StatefulWidget {
   const NoticeDivScreen({Key? key}) : super(key: key);

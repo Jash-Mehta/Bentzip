@@ -1,14 +1,14 @@
 import 'package:bentzip/Admin/presentation/widgets/detail.dart';
 import 'package:bentzip/MainScreen/screens/exportwidget.dart';
 
-class Addteacher extends StatefulWidget {
-  const Addteacher({Key? key}) : super(key: key);
+class AddStudent extends StatefulWidget {
+  const AddStudent({Key? key}) : super(key: key);
 
   @override
-  _AddteacherState createState() => _AddteacherState();
+  _AddStudentState createState() => _AddStudentState();
 }
 
-class _AddteacherState extends State<Addteacher> {
+class _AddStudentState extends State<AddStudent> {
   var data;
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class _AddteacherState extends State<Addteacher> {
                   radius: 23.0,
                   backgroundColor: Colors.blue[800],
                   child: Image.asset(
-                    "assets/teacher.png",
+                    "assets/Users.png",
                     width: 30.0,
                     height: 30.0,
                   ),
@@ -36,7 +36,7 @@ class _AddteacherState extends State<Addteacher> {
               Padding(
                 padding: const EdgeInsets.only(top: 15.0),
                 child: Text(
-                  " ADD TEACHERS",
+                  "ADD STUDENT",
                   style: TextStyle(
                       color: Colors.blue[800],
                       fontSize: Responsive.issmallmobile(context) ? 25 : 22,
@@ -57,30 +57,33 @@ class _AddteacherState extends State<Addteacher> {
              #------------------------Example is Showed Below------------------------#
              */
           DetailScreen(
-            hinttext: "TeacherID",
+            hinttext: "Student ID",
             onchange: (value) {
               data = value;
               print(data);
               setState(() {});
             },
           ),
-          DetailScreen(hinttext: "Full Name"),
-          DetailScreen(hinttext: "Gaurdain Name"),
+          DetailScreen(hinttext: "First Name"),
+          DetailScreen(hinttext: "Middle Name"),
+          DetailScreen(hinttext: "Last Name"),
+          DetailScreen(hinttext: "Father Name"),
           DetailScreen(hinttext: "Mother Name"),
           DetailScreen(hinttext: "DOB"),
-          DetailScreen(hinttext: "Gender"),
-          DetailScreen(hinttext: "Subject"),
-          DetailScreen(hinttext: "Address"),
+          DetailScreen(hinttext: "gender"),
           DetailScreen(
-            hinttext: "Salary",
+            hinttext: "Fee",
             keyboardType: TextInputType.phone,
           ),
-          DetailScreen(hinttext: "Class Alot"),
+          DetailScreen(hinttext: "Class"),
+          DetailScreen(hinttext: "Address"),
+          DetailScreen(hinttext: "Author"),
+          DetailScreen(hinttext: "BusRoute"),
         ]),
       )),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        child: const Icon(
+        child: Icon(
           Icons.post_add,
           color: Colors.white,
         ),

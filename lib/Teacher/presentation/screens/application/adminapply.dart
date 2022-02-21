@@ -1,6 +1,6 @@
 import 'package:bentzip/MainScreen/screens/exportwidget.dart';
 import 'package:bentzip/MainScreen/screens/responsive.dart';
-import 'package:bentzip/Teacher/presentation/widget/generalappbar.dart';
+import 'package:bentzip/MainScreen/screens/generalappbar.dart';
 
 class AdminApply extends StatefulWidget {
   const AdminApply({Key? key}) : super(key: key);

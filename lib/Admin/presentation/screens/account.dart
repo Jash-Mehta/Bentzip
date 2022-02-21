@@ -1,3 +1,4 @@
+import 'package:bentzip/MainScreen/screens/exportwidget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -27,27 +28,8 @@ class _AccountState extends State<Account> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          elevation: 0.0,
-          backgroundColor: Colors.white,
-          title: Text(
-            "ADMIN",
-            style: TextStyle(
-                color: Colors.blue[800],
-                fontWeight: FontWeight.bold,
-                fontSize: 25.0),
-          ),
-          leading: IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: const Icon(
-                CupertinoIcons.back,
-                color: Colors.black,
-                size: 30.0,
-              )),
-          actions: [Image.asset('assets/logo.png')],
-        ),
+        appBar: GeneralAppBar(
+            appbartitle: "ADMIN", onpressed: () => Navigator.pop(context)),
         body: SafeArea(
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [

@@ -42,6 +42,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   const SizedBox(
                     height: 25.0,
                   ),
+                  /**
+                   #--------------------------------UserName TextField------------------#
+                   */
                   Padding(
                     padding: const EdgeInsets.all(15.0),
                     child: TextFormField(
@@ -66,6 +69,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       keyboardType: TextInputType.name,
                     ),
                   ),
+                       /**
+                   #--------------------------------Password TextField------------------#
+                   */
                   Padding(
                     padding: const EdgeInsets.all(15.0),
                     child: TextFormField(

@@ -1,9 +1,6 @@
 import 'package:bentzip/Admin/presentation/model/studentfeedata.dart';
 import 'package:bentzip/Admin/presentation/screens/addteacher.dart';
-import 'package:bentzip/MainScreen/screens/responsive.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-
+import 'package:bentzip/MainScreen/screens/exportwidget.dart';
 class TeacherScreen extends StatefulWidget {
   const TeacherScreen({Key? key}) : super(key: key);
 
@@ -15,28 +12,8 @@ class _TeacherScreenState extends State<TeacherScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0.0,
-        backgroundColor: Colors.white,
-        title: Text(
-          "ADMIN",
-          style: TextStyle(
-            color: Colors.blue[800],
-            fontWeight: FontWeight.bold,
-            fontSize: Responsive.issmallmobile(context) ? 25 : 22,
-          ),
-        ),
-        leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Icon(
-              CupertinoIcons.back,
-              color: Colors.black,
-              size: Responsive.issmallmobile(context) ? 35 : 30,
-            )),
-        actions: [Image.asset('assets/logo.png')],
-      ),
+      appBar: GeneralAppBar(
+          appbartitle: "ADMIN", onpressed: () => Navigator.pop(context)),
       body: SafeArea(
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
