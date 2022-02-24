@@ -1,15 +1,26 @@
+import 'dart:convert';
+
+import 'package:bentzip/Admin/presentation/model/teacher.dart';
 import 'package:bentzip/Admin/presentation/widgets/detail.dart';
 import 'package:bentzip/MainScreen/screens/exportwidget.dart';
+import 'package:bentzip/constants.dart';
+import 'package:flutter/foundation.dart';
 
-class Addteacher extends StatefulWidget {
-  const Addteacher({Key? key}) : super(key: key);
+import 'package:http/http.dart' as http;
+
+
+
+class AddTeacher extends StatefulWidget {
+
+  const AddTeacher({Key? key}) : super(key: key);
 
   @override
-  _AddteacherState createState() => _AddteacherState();
+  _AddTeacherState createState() => _AddTeacherState();
 }
 
-class _AddteacherState extends State<Addteacher> {
-  var data;
+class _AddTeacherState extends State<AddTeacher> {
+  final Teacher _teacher = Teacher();
+  bool loading = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,46 +57,125 @@ class _AddteacherState extends State<Addteacher> {
               )
             ],
           ),
-          /**
-             #------------------Everything is avaiable in this DetailScreen like-----------#
-             {
-               onChanged
-               onSaved
-               Controller
-               keyboardtype
-             }
-             #------------------------Example is Showed Below------------------------#
-             */
           DetailScreen(
             hinttext: "TeacherID",
             onchange: (value) {
-              data = value;
-              print(data);
-              setState(() {});
+              setState(() {
+                _teacher.teacherID = value;
+              });
             },
           ),
-          DetailScreen(hinttext: "Full Name"),
-          DetailScreen(hinttext: "Gaurdain Name"),
-          DetailScreen(hinttext: "Mother Name"),
-          DetailScreen(hinttext: "DOB"),
-          DetailScreen(hinttext: "Gender"),
-          DetailScreen(hinttext: "Subject"),
-          DetailScreen(hinttext: "Address"),
           DetailScreen(
-            hinttext: "Salary",
-            keyboardType: TextInputType.phone,
+            hinttext: "First Name",
+            onchange: (value) {
+              setState(() {
+                _teacher.fName = value;
+              });
+            },
           ),
-          DetailScreen(hinttext: "Class Alot"),
+          DetailScreen(
+            hinttext: "Middle Name",
+            onchange: (value) {
+              setState(() {
+                _teacher.mName = value;
+              });
+            },
+          ),
+          DetailScreen(
+            hinttext: "Last Name",
+            onchange: (value) {
+              setState(() {
+                _teacher.lName = value;
+              });
+            },
+          ),
+          DetailScreen(
+              hinttext: "Guardian Name",
+              onchange: (value) {
+                setState(() {
+                  _teacher.gurdianName = value;
+                });
+              }),
+          DetailScreen(
+              hinttext: "Mother Name",
+              onchange: (value) {
+                setState(() {
+                  _teacher.motherName = value;
+                });
+              }),
+          DetailScreen(
+              hinttext: "DOB",
+              onchange: (value) {
+                setState(() {
+                  _teacher.DOB = value;
+                });
+              }),
+          DetailScreen(
+              hinttext: "Gender",
+              onchange: (value) {
+                setState(() {
+                  _teacher.gender = value;
+                });
+              }),
+          DetailScreen(
+              hinttext: "Subject",
+              onchange: (value) {
+                setState(() {
+                  _teacher.subject = value;
+                });
+              }),
+          DetailScreen(
+              hinttext: "Address",
+              onchange: (value) {
+                setState(() {
+                  _teacher.address = value;
+                });
+              }),
+          DetailScreen(
+              hinttext: "Salary",
+              keyboardType: TextInputType.phone,
+              onchange: (value) {
+                setState(() {
+                  _teacher.salary = value;
+                });
+              }),
+          DetailScreen(
+              hinttext: "Class Allot",
+              onchange: (value) {
+                setState(() {
+                  _teacher.classAlloted = value;
+                });
+              }),
         ]),
       )),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+      floatingActionButton: !loading ? FloatingActionButton(
+        onPressed: ()async {
+          setState(() {
+            loading = true;
+          });
+          var data = jsonEncode(_teacher,
+              toEncodable: (value) => Teacher.toJson(value as Teacher));
+          var header = {"content-type": "application/json"};
+          var res = await http.post(Uri.parse("$adminUrl/teachers/addTeacher"),headers: header,body: data);
+
+          if(res != null){
+            setState(() {
+              loading = false;
+            });
+            if(res.statusCode == 200){
+              Navigator.of(context).pop();
+            }else{
+              const AlertDialog(content: Text("Error"),);
+            }
+          }
+
+        },
         child: const Icon(
           Icons.post_add,
           color: Colors.white,
         ),
         backgroundColor: Colors.blue[800],
-      ),
+      ) : const Center(child: CircularProgressIndicator()),
     );
   }
 }
