@@ -1,4 +1,5 @@
 import 'package:bentzip/Admin/presentation/model/Employee_salarydata.dart';
+import 'package:bentzip/Admin/presentation/widgets/worktop.dart';
 import 'package:bentzip/MainScreen/screens/responsive.dart';
 import 'package:flutter/material.dart';
 
@@ -31,7 +32,7 @@ class _EmployeeSalaryState extends State<EmployeeSalary> {
           child: TextFormField(
             decoration: const InputDecoration(
                 suffixIcon: Icon(Icons.search),
-                hintText: "  Employee ID",
+                hintText: "Employee ID",
                 hintStyle: TextStyle(
                   color: Colors.black54,
                 ),
@@ -46,46 +47,10 @@ class _EmployeeSalaryState extends State<EmployeeSalary> {
         child: Table(
           children: [
             TableRow(children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 12.0),
-                child: Text(
-                  "Employee ID",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: Responsive.issmallmobile(context) ? 10 : 14,
-                      color: Colors.black),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 20.0),
-                child: Text(
-                  "Name",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.w600,
-                      fontSize: Responsive.issmallmobile(context) ? 10 : 14),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 10.0),
-                child: Text(
-                  "Designation",
-                  style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black,
-                      fontSize: Responsive.issmallmobile(context) ? 10 : 14),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 20.0),
-                child: Text(
-                  "Status",
-                  style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black,
-                      fontSize: Responsive.issmallmobile(context) ? 10 : 14),
-                ),
-              ),
+              WorkTop(title: "Employee ID"),
+              WorkTop(title: "Name"),
+              WorkTop(title: "Designation"),
+              WorkTop(title: "Status")
             ])
           ],
         ),

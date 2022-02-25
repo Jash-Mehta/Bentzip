@@ -1,6 +1,7 @@
 import 'package:bentzip/Admin/presentation/model/about_teacher.dart';
 import 'package:bentzip/Admin/presentation/model/studentfeedata.dart';
 import 'package:bentzip/Admin/presentation/screens/add_student.dart';
+import 'package:bentzip/Admin/presentation/widgets/worktop.dart';
 import 'package:bentzip/MainScreen/screens/exportwidget.dart';
 
 class CooridnatesScreen extends StatefulWidget {
@@ -81,48 +82,12 @@ class _CooridnatesScreenState extends State<CooridnatesScreen> {
           Container(
             margin: const EdgeInsets.only(left: 3.0, right: 5.0, top: 10.0),
             child: Table(
-              children: const [
+              children: [
                 TableRow(children: [
-                  Padding(
-                    padding: EdgeInsets.only(left: 10.0),
-                    child: Text(
-                      "Student ID",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14,
-                          color: Colors.black),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 20.0),
-                    child: Text(
-                      "Name",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 14),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 40.0),
-                    child: Text(
-                      "Class",
-                      style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black,
-                          fontSize: 15),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 40.0),
-                    child: Text(
-                      "Section",
-                      style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black,
-                          fontSize: 15),
-                    ),
-                  ),
+                  WorkTop(title: "Student ID"),
+                  WorkTop(title: "Name"),
+                  WorkTop(title: "Class"),
+                  WorkTop(title: "Section")
                 ])
               ],
             ),

@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:bentzip/Admin/presentation/model/about_teacher.dart';
 import 'package:bentzip/Admin/presentation/screens/addteacher.dart';
+import 'package:bentzip/Admin/presentation/widgets/worktop.dart';
 import 'package:bentzip/MainScreen/screens/exportwidget.dart';
 import 'package:bentzip/constants.dart';
 
@@ -94,48 +95,12 @@ class _TeacherScreenState extends State<TeacherScreen> {
         Container(
           margin: const EdgeInsets.only(left: 3.0, right: 5.0, top: 10.0),
           child: Table(
-            children: const [
+            children: [
               TableRow(children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 10.0),
-                  child: Text(
-                    "Employee ID",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 14,
-                        color: Colors.black),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 20.0),
-                  child: Text(
-                    "Name",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 14),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 10.0),
-                  child: Text(
-                    "Class alot",
-                    style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        color: Colors.black,
-                        fontSize: 15),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 20.0),
-                  child: Text(
-                    "Subject",
-                    style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        color: Colors.black,
-                        fontSize: 15),
-                  ),
-                ),
+                WorkTop(title: "Employee ID"),
+                WorkTop(title: "Name"),
+                WorkTop(title: "Class alot"),
+                WorkTop(title: "Subject"),
               ])
             ],
           ),
