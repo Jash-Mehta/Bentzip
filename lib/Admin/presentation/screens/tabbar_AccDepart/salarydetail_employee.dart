@@ -12,6 +12,7 @@ class EmployeeSalary extends StatefulWidget {
 
 class _EmployeeSalaryState extends State<EmployeeSalary> {
   final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Column(children: [
@@ -60,91 +61,81 @@ class _EmployeeSalaryState extends State<EmployeeSalary> {
       ),
       Expanded(
           child: Container(
-        margin: const EdgeInsets.only(left: 10.0, right: 5.0, top: 5.0),
+        margin: const EdgeInsets.only(
+          left: 10.0,
+          right: 5.0,
+        ),
         /**
-         #-----------------------ListView Builder Start From Here-------------------------#
-         */
+                #-----------------------ListView Builder Start From Here-------------------------#
+             */
         child: ListView.builder(
           itemCount: employeesalarydata.length,
           itemBuilder: (BuildContext context, int index) {
             EmployeeSalaryData employeeSalary = employeesalarydata[index];
             return Table(
               children: [
-                TableRow(
-                    decoration: const BoxDecoration(
-                        color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey,
-                            offset: Offset(0.0, 1.0), //(x,y)
-                            blurRadius: 6.0,
-                          ),
-                        ],
-                        border: Border.symmetric(horizontal: BorderSide.none)),
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: InkWell(
-                          onTap: () {
-                            showDialog(
-                              context: context,
-                              builder: (BuildContext context) {
-                                return Dialog(
-                                  child: SizedBox(
-                                    height: MediaQuery.of(context).size.height *
-                                        0.4,
-                                    width:
-                                        MediaQuery.of(context).size.width * 2.0,
-                                    child: Form(
-                                        key: _formKey,
-                                        child: Column(
-                                          children: [],
-                                        )),
-                                  ),
-                                );
-                              },
+                TableRow(children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: InkWell(
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return Dialog(
+                              child: SizedBox(
+                                height:
+                                    MediaQuery.of(context).size.height * 0.4,
+                                width: MediaQuery.of(context).size.width * 2.0,
+                                child: Form(
+                                    key: _formKey,
+                                    child: Column(
+                                      children: [],
+                                    )),
+                              ),
                             );
                           },
-                          child: Text(
-                            employeeSalary.employeeID,
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize:
-                                    Responsive.issmallmobile(context) ? 10 : 14,
-                                fontWeight: FontWeight.w500),
-                          ),
-                        ),
+                        );
+                      },
+                      child: Text(
+                        employeeSalary.employeeID,
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize:
+                                Responsive.issmallmobile(context) ? 10 : 14,
+                            fontWeight: FontWeight.w500),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      employeeSalary.name,
+                      style: const TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.w500),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Center(
                         child: Text(
-                          employeeSalary.name,
-                          style: const TextStyle(
-                              color: Colors.black, fontWeight: FontWeight.w500),
+                      employeeSalary.designation,
+                      style: const TextStyle(color: Colors.black),
+                    )),
+                  ),
+                  Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Center(
+                        child: Text(
+                          employeeSalary.status,
+                          style: TextStyle(
+                              color: (employeeSalary.status.contains('Pending')
+                                  ? Colors.red
+                                  : Colors.green),
+                              fontWeight: FontWeight.w500),
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Center(
-                            child: Text(
-                          employeeSalary.designation,
-                          style: const TextStyle(color: Colors.black),
-                        )),
-                      ),
-                      Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Center(
-                            child: Text(
-                              employeeSalary.status,
-                              style: TextStyle(
-                                  color:
-                                      (employeeSalary.status.contains('Pending')
-                                          ? Colors.red
-                                          : Colors.green),
-                                  fontWeight: FontWeight.w500),
-                            ),
-                          )),
-                    ])
+                      )),
+                ])
               ],
             );
           },

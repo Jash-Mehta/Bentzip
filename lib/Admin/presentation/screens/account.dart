@@ -14,6 +14,7 @@ class Account extends StatefulWidget {
 
 class _AccountState extends State<Account> with SingleTickerProviderStateMixin {
   late TabController _tabController;
+
   @override
   void initState() {
     // TODO: implement initState
@@ -62,40 +63,27 @@ class _AccountState extends State<Account> with SingleTickerProviderStateMixin {
             ],
           ),
           const SizedBox(
-            height: 20.0,
+            height: 5.0,
           ),
           TabBar(
               indicatorSize: TabBarIndicatorSize.label,
-              indicatorWeight: 4.0,
+              indicatorWeight: 2.0,
               indicatorColor: Colors.blue[800],
               controller: _tabController,
+              labelColor: Colors.black,
               unselectedLabelColor: Colors.grey,
-              tabs: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text("Fee Details of Students",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: Responsive.issmallmobile(context) ? 12 : 17,
-                          fontWeight: FontWeight.w400)),
+              tabs: const [
+                Tab(
+                  text: "Students Fee",
                 ),
-                Text(
-                  "Salary Detail of Employees",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: Responsive.issmallmobile(context) ? 12 : 17,
-                      fontWeight: FontWeight.w400),
+                Tab(
+                  text: "Employee Salary",
                 ),
               ]),
           Expanded(
-            child: Container(
-              decoration: const BoxDecoration(
-                color: Colors.white,
-              ),
-              child: TabBarView(
-                  controller: _tabController,
-                  children: const [StudentFee(), EmployeeSalary()]),
-            ),
+            child: TabBarView(
+                controller: _tabController,
+                children: const [StudentFee(), EmployeeSalary()]),
           ),
         ])));
   }

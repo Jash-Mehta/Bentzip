@@ -13,6 +13,7 @@ class ApplicationApproval extends StatefulWidget {
 class _ApplicationApprovalState extends State<ApplicationApproval>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
+
   @override
   void initState() {
     // TODO: implement initState
@@ -80,41 +81,28 @@ class _ApplicationApprovalState extends State<ApplicationApproval>
             ],
           ),
           const SizedBox(
-            height: 20.0,
+            height: 5.0,
           ),
           TabBar(
               indicatorSize: TabBarIndicatorSize.label,
-              indicatorWeight: 4.0,
+              indicatorWeight: 2.0,
               indicatorColor: Colors.blue[800],
               controller: _tabController,
+              labelColor: Colors.black,
               unselectedLabelColor: Colors.grey,
               tabs: const [
-                Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Text("Employee Applications",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 17.0,
-                          fontWeight: FontWeight.bold)),
+                Tab(
+                  text: "Employee Applications",
                 ),
-                Text(
-                  "Student\nApplications",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 17.0,
-                      fontWeight: FontWeight.bold),
+                Tab(
+                  text: "Student Applications",
                 ),
               ]),
           Expanded(
-            child: Container(
-              decoration: const BoxDecoration(
-                color: Colors.white,
-              ),
-              child: TabBarView(controller: _tabController, children: const [
-                EmployeeApplication(),
-                StudentApplication()
-              ]),
-            ),
+            child: TabBarView(controller: _tabController, children: const [
+              EmployeeApplication(),
+              StudentApplication()
+            ]),
           ),
         ])));
   }
