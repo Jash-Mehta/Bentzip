@@ -1,8 +1,12 @@
-import 'package:bentzip/Admin/presentation/model/about_teacher.dart';
-import 'package:bentzip/Admin/presentation/model/studentfeedata.dart';
+import 'dart:convert';
+
 import 'package:bentzip/Admin/presentation/screens/add_student.dart';
 import 'package:bentzip/Admin/presentation/widgets/worktop.dart';
 import 'package:bentzip/MainScreen/screens/exportwidget.dart';
+import 'package:http/http.dart' as http;
+
+import '../../../constants.dart';
+import '../model/student.dart';
 
 class CooridnatesScreen extends StatefulWidget {
   const CooridnatesScreen({Key? key}) : super(key: key);
@@ -12,6 +16,19 @@ class CooridnatesScreen extends StatefulWidget {
 }
 
 class _CooridnatesScreenState extends State<CooridnatesScreen> {
+  Future? _students;
+
+  @override
+  void initState() {
+    _students = getStudents();
+    super.initState();
+  }
+
+  Future getStudents() async {
+    var res = await http.get(Uri.parse("$adminUrl/students"));
+    return (jsonDecode(res.body) as List).map((e) => Student.fromJson(e));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -98,72 +115,90 @@ class _CooridnatesScreenState extends State<CooridnatesScreen> {
           Expanded(
               child: Container(
             margin: const EdgeInsets.only(left: 10.0, right: 5.0, top: 5.0),
-            child: ListView.builder(
-              itemCount: feedata.length,
-              itemBuilder: (BuildContext context, int index) {
-                StudentFeeData studentSalary = feedata[index];
-                return Table(
-                  children: [
-                    TableRow(
-                        decoration: const BoxDecoration(
-                            color: Colors.white,
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey,
-                                offset: Offset(0.0, 1.0), //(x,y)
-                                blurRadius: 6.0,
-                              ),
-                            ],
-                            border:
-                                Border.symmetric(horizontal: BorderSide.none)),
+            child: FutureBuilder(
+              future: _students,
+              builder: (context, data) {
+                if (data.connectionState == ConnectionState.waiting) {
+                  return const Center(child: CircularProgressIndicator());
+                }
+
+                if (data.connectionState == ConnectionState.done) {
+                  return ListView.builder(
+                    itemCount: (data.data as Iterable).length,
+                    itemBuilder: (BuildContext context, int index) {
+                      Student student = (data.data as Iterable).toList()[index];
+                      return Table(
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: InkWell(
-                              onTap: () {
-                                showDialog(
-                                  context: context,
-                                  builder: (BuildContext context) {
-                                    return const AlertDialog();
-                                  },
-                                );
-                              },
-                              child: Text(
-                                studentSalary.studentid,
-                                style: const TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 15.0,
-                                    fontWeight: FontWeight.w500),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              studentSalary.name,
-                              style: const TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Center(
-                                child: Text(
-                              studentSalary.division,
-                              style: const TextStyle(color: Colors.black),
-                            )),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Center(
-                                child: Text(
-                              studentSalary.division,
-                              style: const TextStyle(color: Colors.black),
-                            )),
-                          ),
-                        ])
-                  ],
+                          TableRow(
+                              decoration: const BoxDecoration(
+                                  color: Colors.white,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey,
+                                      offset: Offset(0.0, 1.0), //(x,y)
+                                      blurRadius: 6.0,
+                                    ),
+                                  ],
+                                  border: Border.symmetric(
+                                      horizontal: BorderSide.none)),
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: InkWell(
+                                    onTap: () {
+                                      showDialog(
+                                        context: context,
+                                        builder: (BuildContext context) {
+                                          return const AlertDialog();
+                                        },
+                                      );
+                                    },
+                                    child: Text(
+                                      student.studentID,
+                                      style: const TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 15.0,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    student.fName,
+                                    style: const TextStyle(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Center(
+                                      child: Text(
+                                    student.sClass,
+                                    style: const TextStyle(color: Colors.black),
+                                  )),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Center(
+                                      child: Text(
+                                    student.sClass,
+                                    style: const TextStyle(color: Colors.black),
+                                  )),
+                                ),
+                              ])
+                        ],
+                      );
+                    },
+                  );
+                }
+
+                return const Center(
+                  child: Text(
+                    "Error",
+                    style: TextStyle(color: Colors.red),
+                  ),
                 );
               },
             ),
@@ -171,8 +206,13 @@ class _CooridnatesScreenState extends State<CooridnatesScreen> {
         ])),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (_) => AddStudent()));
+            Navigator.push(context,
+                    MaterialPageRoute(builder: (_) => const AddStudent()))
+                .then((value) {
+              setState(() {
+                _students = getStudents();
+              });
+            });
           },
           child: const Icon(
             Icons.add,

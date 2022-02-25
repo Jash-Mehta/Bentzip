@@ -13,7 +13,7 @@ class Teacher {
   String classAlloted = "";
 
   static Map<String, dynamic> toJson(Teacher value) => {
-        'teacherID': value.teacherID,
+        'teacherID': value.teacherID, 
         'fName': value.fName,
         'mName': value.mName,
         'lName': value.lName,

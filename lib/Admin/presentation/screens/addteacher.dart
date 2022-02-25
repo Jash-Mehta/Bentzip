@@ -5,7 +5,6 @@ import 'package:bentzip/Admin/presentation/widgets/detail.dart';
 import 'package:bentzip/MainScreen/screens/exportwidget.dart';
 import 'package:bentzip/constants.dart';
 import 'package:flutter/foundation.dart';
-
 import 'package:http/http.dart' as http;
 
 class AddTeacher extends StatefulWidget {
@@ -182,9 +181,20 @@ class _AddTeacherState extends State<AddTeacher> {
                   if (res.statusCode == 200) {
                     Navigator.of(context).pop();
                   } else {
-                    const AlertDialog(
-                      content: Text("Error"),
-                    );
+                    var body = jsonDecode(res.body);
+                    showDialog(
+                        context: context,
+                        builder: (context) => AlertDialog(
+                              title: const Text("Error"),
+                              content: Text(body['error']),
+                              actions: [
+                                ElevatedButton(
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: const Text("OK"))
+                              ],
+                            ));
                   }
                 }
               },
