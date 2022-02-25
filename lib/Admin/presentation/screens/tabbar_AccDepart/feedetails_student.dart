@@ -2,6 +2,7 @@ import 'package:bentzip/Admin/presentation/model/Employee_salarydata.dart';
 import 'package:bentzip/Admin/presentation/model/about_teacher.dart';
 import 'package:bentzip/Admin/presentation/model/studentfeedata.dart';
 import 'package:bentzip/Admin/presentation/widgets/student_feedetail_row.dart';
+import 'package:bentzip/MainScreen/screens/responsive.dart';
 import 'package:flutter/material.dart';
 
 class StudentFee extends StatefulWidget {
@@ -27,30 +28,33 @@ class _StudentFeeState extends State<StudentFee> {
               ),
             ],
             borderRadius: BorderRadius.circular(25.0)),
-        child: TextFormField(
-          decoration: const InputDecoration(
-              suffixIcon: Icon(Icons.search),
-              hintText: "  Employee ID",
-              hintStyle: TextStyle(
-                color: Colors.black54,
-              ),
-              focusedBorder: InputBorder.none,
-              enabledBorder: InputBorder.none),
-          keyboardType: TextInputType.text,
+        child: Padding(
+          padding: const EdgeInsets.only(left: 14.0, top: 5.0),
+          child: TextFormField(
+            decoration: const InputDecoration(
+                suffixIcon: Icon(Icons.search),
+                hintText: "Employee ID",
+                hintStyle: TextStyle(
+                  color: Colors.black54,
+                ),
+                focusedBorder: InputBorder.none,
+                enabledBorder: InputBorder.none),
+            keyboardType: TextInputType.text,
+          ),
         ),
       ),
       Container(
         margin: const EdgeInsets.only(left: 3.0, right: 5.0, top: 10.0),
         child: Table(
-          children: const [
+          children: [
             TableRow(children: [
               Padding(
-                padding: EdgeInsets.only(left: 10.0),
+                padding: const EdgeInsets.only(left: 10.0),
                 child: Text(
                   "Student ID",
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 14,
+                      fontSize: Responsive.issmallmobile(context) ? 10 : 14,
                       color: Colors.black),
                 ),
               ),
@@ -61,7 +65,7 @@ class _StudentFeeState extends State<StudentFee> {
                   style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.w600,
-                      fontSize: 14),
+                      fontSize: Responsive.issmallmobile(context) ? 10 : 14),
                 ),
               ),
               Padding(
@@ -71,7 +75,7 @@ class _StudentFeeState extends State<StudentFee> {
                   style: TextStyle(
                       fontWeight: FontWeight.w600,
                       color: Colors.black,
-                      fontSize: 15),
+                      fontSize: Responsive.issmallmobile(context) ? 10 : 14),
                 ),
               ),
               Padding(
@@ -81,7 +85,7 @@ class _StudentFeeState extends State<StudentFee> {
                   style: TextStyle(
                       fontWeight: FontWeight.w600,
                       color: Colors.black,
-                      fontSize: 15),
+                      fontSize: Responsive.issmallmobile(context) ? 10 : 14),
                 ),
               ),
               Padding(
@@ -91,7 +95,7 @@ class _StudentFeeState extends State<StudentFee> {
                   style: TextStyle(
                       fontWeight: FontWeight.w600,
                       color: Colors.black,
-                      fontSize: 15),
+                      fontSize: Responsive.issmallmobile(context) ? 10 : 14),
                 ),
               ),
             ])

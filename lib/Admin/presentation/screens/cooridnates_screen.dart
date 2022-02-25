@@ -63,16 +63,19 @@ class _CooridnatesScreenState extends State<CooridnatesScreen> {
                   ),
                 ],
                 borderRadius: BorderRadius.circular(25.0)),
-            child: TextFormField(
-              decoration: const InputDecoration(
-                  suffixIcon: Icon(Icons.search),
-                  hintText: "  Student ID",
-                  hintStyle: TextStyle(
-                    color: Colors.black54,
-                  ),
-                  focusedBorder: InputBorder.none,
-                  enabledBorder: InputBorder.none),
-              keyboardType: TextInputType.text,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 14.0, top: 5.0),
+              child: TextFormField(
+                decoration: const InputDecoration(
+                    suffixIcon: Icon(Icons.search),
+                    hintText: "Student ID",
+                    hintStyle: TextStyle(
+                      color: Colors.black54,
+                    ),
+                    focusedBorder: InputBorder.none,
+                    enabledBorder: InputBorder.none),
+                keyboardType: TextInputType.text,
+              ),
             ),
           ),
           Container(
@@ -104,6 +107,16 @@ class _CooridnatesScreenState extends State<CooridnatesScreen> {
                     padding: EdgeInsets.only(left: 40.0),
                     child: Text(
                       "Class",
+                      style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          color: Colors.black,
+                          fontSize: 15),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 40.0),
+                    child: Text(
+                      "Section",
                       style: TextStyle(
                           fontWeight: FontWeight.w600,
                           color: Colors.black,
@@ -167,6 +180,14 @@ class _CooridnatesScreenState extends State<CooridnatesScreen> {
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold),
                             ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Center(
+                                child: Text(
+                              studentSalary.division,
+                              style: const TextStyle(color: Colors.black),
+                            )),
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),

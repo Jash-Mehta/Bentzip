@@ -10,6 +10,7 @@ class DetailScreen extends StatefulWidget {
   TextEditingController? controller;
   FormFieldSetter<String>? onSaved;
   TextInputType? keyboardType;
+  TextInputAction ? inputAction;
 
   DetailScreen({
     Key? key,
@@ -18,6 +19,7 @@ class DetailScreen extends StatefulWidget {
     this.controller,
     this.onSaved,
     this.keyboardType,
+    this.inputAction,
   }) : super(key: key);
 
   @override
@@ -58,7 +60,8 @@ class _DetailScreenState extends State<DetailScreen> {
               ),
             ),
           ),
-          keyboardType: widget.keyboardType
+          keyboardType: widget.keyboardType,
+          textInputAction: widget.inputAction,
         ),
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:bentzip/Admin/presentation/model/Employee_salarydata.dart';
+import 'package:bentzip/MainScreen/screens/responsive.dart';
 import 'package:flutter/material.dart';
 
 class EmployeeSalary extends StatefulWidget {
@@ -25,61 +26,64 @@ class _EmployeeSalaryState extends State<EmployeeSalary> {
               ),
             ],
             borderRadius: BorderRadius.circular(25.0)),
-        child: TextFormField(
-          decoration: const InputDecoration(
-              suffixIcon: Icon(Icons.search),
-              hintText: "  Employee ID",
-              hintStyle: TextStyle(
-                color: Colors.black54,
-              ),
-              focusedBorder: InputBorder.none,
-              enabledBorder: InputBorder.none),
-          keyboardType: TextInputType.text,
+        child: Padding(
+          padding: const EdgeInsets.only(left: 14.0, top: 5.0),
+          child: TextFormField(
+            decoration: const InputDecoration(
+                suffixIcon: Icon(Icons.search),
+                hintText: "  Employee ID",
+                hintStyle: TextStyle(
+                  color: Colors.black54,
+                ),
+                focusedBorder: InputBorder.none,
+                enabledBorder: InputBorder.none),
+            keyboardType: TextInputType.text,
+          ),
         ),
       ),
       Container(
         margin: const EdgeInsets.only(left: 3.0, right: 5.0, top: 10.0),
         child: Table(
-          children: const [
+          children: [
             TableRow(children: [
               Padding(
-                padding: EdgeInsets.only(left: 12.0),
+                padding: const EdgeInsets.only(left: 12.0),
                 child: Text(
                   "Employee ID",
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 14,
+                      fontSize: Responsive.issmallmobile(context) ? 10 : 14,
                       color: Colors.black),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 20.0),
+                padding: const EdgeInsets.only(left: 20.0),
                 child: Text(
                   "Name",
                   style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.w600,
-                      fontSize: 14),
+                      fontSize: Responsive.issmallmobile(context) ? 10 : 14),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 10.0),
+                padding: const EdgeInsets.only(left: 10.0),
                 child: Text(
                   "Designation",
                   style: TextStyle(
                       fontWeight: FontWeight.w600,
                       color: Colors.black,
-                      fontSize: 15),
+                      fontSize: Responsive.issmallmobile(context) ? 10 : 14),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 20.0),
+                padding: const EdgeInsets.only(left: 20.0),
                 child: Text(
                   "Status",
                   style: TextStyle(
                       fontWeight: FontWeight.w600,
                       color: Colors.black,
-                      fontSize: 15),
+                      fontSize: Responsive.issmallmobile(context) ? 10 : 14),
                 ),
               ),
             ])
@@ -138,9 +142,10 @@ class _EmployeeSalaryState extends State<EmployeeSalary> {
                           },
                           child: Text(
                             employeeSalary.employeeID,
-                            style: const TextStyle(
+                            style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 15.0,
+                                fontSize:
+                                    Responsive.issmallmobile(context) ? 10 : 14,
                                 fontWeight: FontWeight.w500),
                           ),
                         ),
@@ -150,7 +155,7 @@ class _EmployeeSalaryState extends State<EmployeeSalary> {
                         child: Text(
                           employeeSalary.name,
                           style: const TextStyle(
-                              color: Colors.black, fontWeight: FontWeight.bold),
+                              color: Colors.black, fontWeight: FontWeight.w500),
                         ),
                       ),
                       Padding(
@@ -171,7 +176,7 @@ class _EmployeeSalaryState extends State<EmployeeSalary> {
                                       (employeeSalary.status.contains('Pending')
                                           ? Colors.red
                                           : Colors.green),
-                                  fontWeight: FontWeight.bold),
+                                  fontWeight: FontWeight.w500),
                             ),
                           )),
                     ])

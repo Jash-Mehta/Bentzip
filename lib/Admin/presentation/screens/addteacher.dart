@@ -8,10 +8,7 @@ import 'package:flutter/foundation.dart';
 
 import 'package:http/http.dart' as http;
 
-
-
 class AddTeacher extends StatefulWidget {
-
   const AddTeacher({Key? key}) : super(key: key);
 
   @override
@@ -59,6 +56,7 @@ class _AddTeacherState extends State<AddTeacher> {
           ),
           DetailScreen(
             hinttext: "TeacherID",
+            inputAction: TextInputAction.next,
             onchange: (value) {
               setState(() {
                 _teacher.teacherID = value;
@@ -66,6 +64,7 @@ class _AddTeacherState extends State<AddTeacher> {
             },
           ),
           DetailScreen(
+            inputAction: TextInputAction.next,
             hinttext: "First Name",
             onchange: (value) {
               setState(() {
@@ -74,6 +73,7 @@ class _AddTeacherState extends State<AddTeacher> {
             },
           ),
           DetailScreen(
+            inputAction: TextInputAction.next,
             hinttext: "Middle Name",
             onchange: (value) {
               setState(() {
@@ -82,6 +82,7 @@ class _AddTeacherState extends State<AddTeacher> {
             },
           ),
           DetailScreen(
+            inputAction: TextInputAction.next,
             hinttext: "Last Name",
             onchange: (value) {
               setState(() {
@@ -90,6 +91,7 @@ class _AddTeacherState extends State<AddTeacher> {
             },
           ),
           DetailScreen(
+              inputAction: TextInputAction.next,
               hinttext: "Guardian Name",
               onchange: (value) {
                 setState(() {
@@ -97,6 +99,7 @@ class _AddTeacherState extends State<AddTeacher> {
                 });
               }),
           DetailScreen(
+              inputAction: TextInputAction.next,
               hinttext: "Mother Name",
               onchange: (value) {
                 setState(() {
@@ -104,6 +107,7 @@ class _AddTeacherState extends State<AddTeacher> {
                 });
               }),
           DetailScreen(
+              inputAction: TextInputAction.next,
               hinttext: "DOB",
               onchange: (value) {
                 setState(() {
@@ -111,6 +115,7 @@ class _AddTeacherState extends State<AddTeacher> {
                 });
               }),
           DetailScreen(
+              inputAction: TextInputAction.next,
               hinttext: "Gender",
               onchange: (value) {
                 setState(() {
@@ -118,6 +123,7 @@ class _AddTeacherState extends State<AddTeacher> {
                 });
               }),
           DetailScreen(
+              inputAction: TextInputAction.next,
               hinttext: "Subject",
               onchange: (value) {
                 setState(() {
@@ -125,6 +131,7 @@ class _AddTeacherState extends State<AddTeacher> {
                 });
               }),
           DetailScreen(
+              inputAction: TextInputAction.next,
               hinttext: "Address",
               onchange: (value) {
                 setState(() {
@@ -132,6 +139,7 @@ class _AddTeacherState extends State<AddTeacher> {
                 });
               }),
           DetailScreen(
+              inputAction: TextInputAction.next,
               hinttext: "Salary",
               keyboardType: TextInputType.phone,
               onchange: (value) {
@@ -140,6 +148,7 @@ class _AddTeacherState extends State<AddTeacher> {
                 });
               }),
           DetailScreen(
+              inputAction: TextInputAction.done,
               hinttext: "Class Allot",
               onchange: (value) {
                 setState(() {
@@ -148,34 +157,40 @@ class _AddTeacherState extends State<AddTeacher> {
               }),
         ]),
       )),
-      floatingActionButton: !loading ? FloatingActionButton(
-        onPressed: ()async {
-          setState(() {
-            loading = true;
-          });
-          var data = jsonEncode(_teacher,
-              toEncodable: (value) => Teacher.toJson(value as Teacher));
-          var header = {"content-type": "application/json"};
-          var res = await http.post(Uri.parse("$adminUrl/teachers/addTeacher"),headers: header,body: data);
+      floatingActionButton: !loading
+          ? FloatingActionButton(
+              onPressed: () async {
+                setState(() {
+                  loading = true;
+                });
+                var data = jsonEncode(_teacher,
+                    toEncodable: (value) => Teacher.toJson(value as Teacher));
+                var header = {"content-type": "application/json"};
+                var res = await http.post(
+                    Uri.parse("$adminUrl/teachers/addTeacher"),
+                    headers: header,
+                    body: data);
 
-          if(res != null){
-            setState(() {
-              loading = false;
-            });
-            if(res.statusCode == 200){
-              Navigator.of(context).pop();
-            }else{
-              const AlertDialog(content: Text("Error"),);
-            }
-          }
-
-        },
-        child: const Icon(
-          Icons.post_add,
-          color: Colors.white,
-        ),
-        backgroundColor: Colors.blue[800],
-      ) : const Center(child: CircularProgressIndicator()),
+                if (res != null) {
+                  setState(() {
+                    loading = false;
+                  });
+                  if (res.statusCode == 200) {
+                    Navigator.of(context).pop();
+                  } else {
+                    const AlertDialog(
+                      content: Text("Error"),
+                    );
+                  }
+                }
+              },
+              child: const Icon(
+                Icons.post_add,
+                color: Colors.white,
+              ),
+              backgroundColor: Colors.blue[800],
+            )
+          : const Center(child: CircularProgressIndicator()),
     );
   }
 }

@@ -70,21 +70,21 @@ class _AccountState extends State<Account> with SingleTickerProviderStateMixin {
               indicatorColor: Colors.blue[800],
               controller: _tabController,
               unselectedLabelColor: Colors.grey,
-              tabs: const [
+              tabs: [
                 Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: Text("Fee Details of Students",
                       style: TextStyle(
                           color: Colors.black,
-                          fontSize: 17.0,
-                          fontWeight: FontWeight.bold)),
+                          fontSize: Responsive.issmallmobile(context) ? 12 : 17,
+                          fontWeight: FontWeight.w400)),
                 ),
                 Text(
                   "Salary Detail of Employees",
                   style: TextStyle(
                       color: Colors.black,
-                      fontSize: 17.0,
-                      fontWeight: FontWeight.bold),
+                      fontSize: Responsive.issmallmobile(context) ? 12 : 17,
+                      fontWeight: FontWeight.w400),
                 ),
               ]),
           Expanded(

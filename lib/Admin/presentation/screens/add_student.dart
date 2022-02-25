@@ -57,6 +57,7 @@ class _AddStudentState extends State<AddStudent> {
              #------------------------Example is Showed Below------------------------#
              */
           DetailScreen(
+            inputAction: TextInputAction.next,
             hinttext: "Student ID",
             onchange: (value) {
               data = value;
@@ -64,21 +65,30 @@ class _AddStudentState extends State<AddStudent> {
               setState(() {});
             },
           ),
-          DetailScreen(hinttext: "First Name"),
-          DetailScreen(hinttext: "Middle Name"),
-          DetailScreen(hinttext: "Last Name"),
-          DetailScreen(hinttext: "Father Name"),
-          DetailScreen(hinttext: "Mother Name"),
-          DetailScreen(hinttext: "DOB"),
-          DetailScreen(hinttext: "gender"),
           DetailScreen(
-            hinttext: "Fee",
-            keyboardType: TextInputType.phone,
+            hinttext: "First Name",
+            inputAction: TextInputAction.next,
           ),
-          DetailScreen(hinttext: "Class"),
-          DetailScreen(hinttext: "Address"),
-          DetailScreen(hinttext: "Author"),
-          DetailScreen(hinttext: "BusRoute"),
+          DetailScreen(
+            hinttext: "Middle Name",
+            inputAction: TextInputAction.next,
+          ),
+          DetailScreen(
+              hinttext: "Last Name", inputAction: TextInputAction.next),
+          DetailScreen(
+              hinttext: "Father Name", inputAction: TextInputAction.next),
+          DetailScreen(
+              hinttext: "Mother Name", inputAction: TextInputAction.next),
+          DetailScreen(hinttext: "DOB", inputAction: TextInputAction.next),
+          DetailScreen(hinttext: "Gender", inputAction: TextInputAction.next),
+          DetailScreen(
+              hinttext: "Fee",
+              keyboardType: TextInputType.phone,
+              inputAction: TextInputAction.next),
+          DetailScreen(hinttext: "Class", inputAction: TextInputAction.next),
+          DetailScreen(hinttext: "Address", inputAction: TextInputAction.next),
+          DetailScreen(hinttext: "Author", inputAction: TextInputAction.next),
+          DetailScreen(hinttext: "BusRoute", inputAction: TextInputAction.done),
         ]),
       )),
       floatingActionButton: FloatingActionButton(

@@ -6,7 +6,7 @@ class Teacherdrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width / 1.18,
+      width: MediaQuery.of(context).size.width / 1.30,
       decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
@@ -52,7 +52,7 @@ class Teacherdrawer extends StatelessWidget {
           InkWell(
             onTap: () => Navigator.pushNamed(context, '/teacherstudentdetail'),
             child: TeacherDrawerListview(
-                title: "Student Details", icon: "assets/blueuser.png"),
+                title: "Students", icon: "assets/blueuser.png"),
           ),
           const SizedBox(
             height: 8.0,
@@ -119,7 +119,7 @@ class Teacherdrawer extends StatelessWidget {
               Navigator.pushNamed(context, '/teacherstudentperformance');
             },
             child: TeacherDrawerListview(
-                title: "Student Performance", icon: "assets/result.png"),
+                title: "Performance", icon: "assets/result.png"),
           ),
           const SizedBox(
             height: 8.0,
@@ -146,7 +146,7 @@ class Teacherdrawer extends StatelessWidget {
               Navigator.pushNamed(context, '');
             },
             child: TeacherDrawerListview(
-                title: "Activities Allotment", icon: "assets/activities.png"),
+                title: "Activities", icon: "assets/activities.png"),
           ),
           const SizedBox(
             height: 8.0,

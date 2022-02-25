@@ -76,16 +76,19 @@ class _TeacherScreenState extends State<TeacherScreen> {
                 ),
               ],
               borderRadius: BorderRadius.circular(25.0)),
-          child: TextFormField(
-            decoration: const InputDecoration(
-                suffixIcon: Icon(Icons.search),
-                hintText: "  Employee ID",
-                hintStyle: TextStyle(
-                  color: Colors.black54,
-                ),
-                focusedBorder: InputBorder.none,
-                enabledBorder: InputBorder.none),
-            keyboardType: TextInputType.text,
+          child: Padding(
+            padding: const EdgeInsets.only(left: 14.0, top: 5.0),
+            child: TextFormField(
+              decoration: const InputDecoration(
+                  suffixIcon: Icon(Icons.search),
+                  hintText: "Employee ID",
+                  hintStyle: TextStyle(
+                    color: Colors.black54,
+                  ),
+                  focusedBorder: InputBorder.none,
+                  enabledBorder: InputBorder.none),
+              keyboardType: TextInputType.text,
+            ),
           ),
         ),
         Container(
