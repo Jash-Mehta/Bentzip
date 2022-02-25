@@ -18,6 +18,7 @@ class AddTeacher extends StatefulWidget {
 class _AddTeacherState extends State<AddTeacher> {
   final Teacher _teacher = Teacher();
   bool loading = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -147,14 +148,17 @@ class _AddTeacherState extends State<AddTeacher> {
                   _teacher.salary = value;
                 });
               }),
-          DetailScreen(
-              inputAction: TextInputAction.done,
-              hinttext: "Class Allot",
-              onchange: (value) {
-                setState(() {
-                  _teacher.classAlloted = value;
-                });
-              }),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 100.0),
+            child: DetailScreen(
+                inputAction: TextInputAction.done,
+                hinttext: "Class Allot",
+                onchange: (value) {
+                  setState(() {
+                    _teacher.classAlloted = value;
+                  });
+                }),
+          ),
         ]),
       )),
       floatingActionButton: !loading

@@ -38,9 +38,8 @@ class _DashBoardState extends State<DashBoard> {
         }),
         actions: [Image.asset('assets/logo.png')],
       ),
-      drawer: AdminDrawer(),
-      body: SafeArea(
-          child: Column(
+      drawer: const AdminDrawer(),
+      body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
@@ -61,7 +60,7 @@ class _DashBoardState extends State<DashBoard> {
                         fontSize: Responsive.issmallmobile(context) ? 25 : 22,
                         fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 5.0,
                   ),
                   Text(
@@ -132,7 +131,7 @@ class _DashBoardState extends State<DashBoard> {
             crossAxisCount: 2,
             children: <Widget>[
               /**
-                  Teacher Screen......
+                      Teacher Screen......
                    */
 
               InkWell(
@@ -143,7 +142,7 @@ class _DashBoardState extends State<DashBoard> {
                     imageurl: "assets/teacher.png", title: "Teacher"),
               ),
               /**
-                  Student Screen......
+                      Student Screen......
                    */
               InkWell(
                 onTap: () {
@@ -153,8 +152,8 @@ class _DashBoardState extends State<DashBoard> {
                     imageurl: "assets/Users.png", title: "Student"),
               ),
               /**
-                 Account Screen.......
-                 */
+                      Account Screen.......
+                   */
               InkWell(
                 onTap: () => Navigator.pushNamed(context, '/accountdepartment'),
                 child: DashBoardContainer(
@@ -162,7 +161,7 @@ class _DashBoardState extends State<DashBoard> {
               ),
 
               /**
-                  Application Screen.......
+                      Application Screen.......
                    */
               InkWell(
                 onTap: () {
@@ -174,7 +173,7 @@ class _DashBoardState extends State<DashBoard> {
             ],
           )),
         ],
-      )),
+      ),
     );
   }
 }
